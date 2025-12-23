@@ -37,7 +37,7 @@
         /* Carousel Transition */
         #carousel-track { transition: transform 0.5s ease-in-out; }
 
-        /* RD Station Form Fix - Aumentado para 600px */
+        /* RD Station Form Fix */
         #rd-row-kked861r .bricks--column > div {
           max-width: 600px;
           margin: 0 auto;
@@ -52,7 +52,15 @@
             <div class="flex justify-between items-center h-16">
                 <!-- LOGO -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/VOLL-PILATES-Logotipo-Institucional-Branco-01.webp" alt="VOLL Pilates Studios" class="h-10 w-auto object-contain" width="150" height="40">
+                    <!-- Otimização: Width/Height explícitos + fetchpriority high -->
+                    <img 
+                        src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/VOLL-PILATES-Logotipo-Institucional-Branco-01.webp" 
+                        alt="Logo VOLL Pilates Studios" 
+                        class="h-10 w-auto object-contain" 
+                        width="150" 
+                        height="40"
+                        fetchpriority="high"
+                    >
                 </div>
 
                 <!-- DESKTOP NAV -->
@@ -73,9 +81,9 @@
 
                 <!-- MOBILE MENU BUTTON -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors" aria-label="Abrir menu">
-                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors" aria-label="Abrir menu principal">
+                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
@@ -93,14 +101,12 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');">
-            <!-- Alterado: opacidade reduzida de bg-black/60 para bg-black/50 para clarear -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');" aria-hidden="true">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-                <!-- Adicionado: -ml-4 lg:-ml-12 para puxar o texto mais para a esquerda -->
                 <div class="text-white space-y-2 animate-fade-in-up pb-4 md:pb-0 -ml-4 lg:-ml-12"> 
                     <h1 class="text-[40px] text-white leading-tight font-normal">
                         <span class="block">Franquia</span>
@@ -119,14 +125,15 @@
                         <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden">
                             <span>Quero ser um franqueado!</span>
                             <div class="w-0 group-hover:w-[28px] transition-all duration-500 flex justify-end overflow-hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                             </div>
                         </a>
                     </div>
                 </div>
                 <!-- RD Station Form Container -->
                 <div class="w-full max-w-[600px] mx-auto md:ml-auto">
-                    <div role="main" id="franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd" style="opacity: 0.9 !important; border-radius: 20px; overflow: hidden;"></div>
+                    <!-- Aria-label adicionado para acessibilidade -->
+                    <div role="region" aria-label="Formulário de Inscrição" id="franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd" style="opacity: 0.9 !important; border-radius: 20px; overflow: hidden;"></div>
                 </div>
             </div>
         </div>
@@ -139,7 +146,8 @@
                 <!-- Item 1 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="INVESTIMENTO FACILITADO" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <!-- Otimização: Width/Height e Lazy Loading -->
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">INVESTIMENTO FACILITADO</h3>
@@ -149,7 +157,7 @@
                 <!-- Item 2 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="EQUIPAMENTOS" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">EQUIPAMENTOS</h3>
@@ -159,7 +167,7 @@
                 <!-- Item 3 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="ESCALABILIDADE" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">ESCALABILIDADE</h3>
@@ -169,7 +177,7 @@
                 <!-- Item 4 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="FORMAÇÃO TÉCNICA" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FORMAÇÃO TÉCNICA</h3>
@@ -179,7 +187,7 @@
                 <!-- Item 5 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="DIREITOS DA MARCA" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">DIREITOS DA MARCA</h3>
@@ -189,7 +197,7 @@
                 <!-- Item 6 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="FATURE MUITO!" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FATURE MUITO!</h3>
@@ -204,15 +212,15 @@
     <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]">
         <!-- Esquerda -->
         <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
-            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');">
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" aria-hidden="true">
                 <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,150,141,0.84), #29c4a9);"></div>
             </div>
             <div class="relative z-10 space-y-8 max-w-sm mx-0 lg:mx-0">
                 <div class="space-y-8">
-                     <!-- Itens da lista com peso normal e setas maiores (w-10 h-10) -->
+                     <!-- Itens da lista -->
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                         </div>
                         <div class="text-white">
                             <h4 class="font-bold text-lg mb-1">Campanhas de Vendas Prontas</h4>
@@ -222,7 +230,7 @@
                      
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                         </div>
                         <div class="text-white">
                             <h4 class="font-bold text-lg mb-1">Projeto Arquitetônico</h4>
@@ -232,7 +240,7 @@
                      
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                         </div>
                         <div class="text-white">
                             <h4 class="font-bold text-lg mb-1">Plataforma do Franqueado</h4>
@@ -242,7 +250,7 @@
                      
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                         </div>
                         <div class="text-white">
                             <h4 class="font-bold text-lg mb-1">Marketing 2.0</h4>
@@ -252,7 +260,7 @@
                      
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                         </div>
                         <div class="text-white">
                             <h4 class="font-bold text-lg mb-1">Treinamentos Avançados</h4>
@@ -296,7 +304,7 @@
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>Quero minha franquia VOLL Pilates</span>
                     <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </div>
                 </button>
             </div>
@@ -305,13 +313,13 @@
 
     <!-- SECURITY SECTION -->
     <section class="relative w-full py-20 md:py-28">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');" aria-hidden="true">
             <div class="absolute inset-0 bg-black/75"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
             <div class="space-y-4">
                 <div class="w-[50px] h-[3px] bg-[#FFB400] mx-auto mb-6"></div>
-                <!-- Line height aumentado via style="line-height: 1.0;" -->
+                <!-- Line height aumentado -->
                 <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold" style="line-height: 1.0;">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
                 <h3 class="text-xl md:text-[22px] font-bold text-gray-200">Empreenda com segurança, empreenda com a VOLL Studios.</h3>
             </div>
@@ -374,7 +382,7 @@
             
             <!-- Coluna Esquerda: Imagem de Fundo com Overlay (Agora ocupa 70%) -->
             <div class="relative flex flex-col justify-center py-20 px-6 lg:px-12 xl:px-20">
-                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');">
+                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');" aria-hidden="true">
                     <div class="absolute inset-0" style="background-color: rgba(40,40,40,0.79);"></div>
                 </div>
                 <div class="relative z-10 space-y-8">
@@ -400,7 +408,7 @@
                 <h3 class="text-3xl font-bold mb-8">Entenda o Negócio</h3>
                 <div class="space-y-8">
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Payback" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Payback (quando você tem retorno do valor investido)</p>
                             <!-- Removido font-bold -->
@@ -408,7 +416,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Breakeven" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Breakeven (momento na qual o Studio começa a dar lucro)</p>
                             <!-- Removido font-bold -->
@@ -416,7 +424,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Royalties" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg font-bold">Royalties</p>
                             <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A] space-y-1">
