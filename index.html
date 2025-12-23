@@ -206,9 +206,10 @@
     </section>
 
     <!-- TARGET AUDIENCE SECTION -->
-    <section class="w-full grid grid-cols-1 lg:grid-cols-12">
+    <!-- ALTERADO PARA lg:grid-cols-[40%_60%] para diminuir a coluna da esquerda -->
+    <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]">
         <!-- Esquerda -->
-        <div class="lg:col-span-5 relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
+        <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
             <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');">
                 <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,150,141,0.84), #29c4a9);"></div>
             </div>
@@ -269,7 +270,7 @@
         </div>
         
         <!-- Direita -->
-        <div class="lg:col-span-7 flex flex-col">
+        <div class="flex flex-col">
             <div class="flex-1 bg-[#EEEEEE] py-16 px-6 md:px-10 lg:px-12 flex flex-col justify-center items-start">
                 <div class="max-w-2xl mx-auto lg:mx-0 space-y-6">
                     <div>
@@ -296,7 +297,8 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-[#2A2A2A] py-14 px-6 md:px-10 lg:px-12 flex items-center">
+            <!-- Padding reduzido para py-8 -->
+            <div class="bg-[#2A2A2A] py-8 px-6 md:px-10 lg:px-12 flex items-center">
                 <!-- Borda aumentada para 3px -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300">
                     <div class="w-6 h-6" aria-hidden="true"></div>
@@ -317,8 +319,8 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
             <div class="space-y-4">
                 <div class="w-[50px] h-[3px] bg-[#FFB400] mx-auto mb-6"></div>
-                <!-- Line height aumentado: leading-normal -->
-                <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold leading-normal">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
+                <!-- Line height aumentado: leading-snug e text-[64px] -->
+                <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold leading-snug">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
                 <h3 class="text-xl md:text-[22px] font-bold text-gray-200">Empreenda com segurança, empreenda com a VOLL Studios.</h3>
             </div>
             <div class="flex flex-col items-center gap-2 py-0">
@@ -386,7 +388,7 @@
                 <div class="relative z-10 space-y-8">
                     <div class="flex border-l-4 border-[#DDDB40] pl-6 py-2">
                         <div class="space-y-4">
-                            <!-- H2 Ajustado: lg:text-[64px] -->
+                            <!-- H2 Ajustado: lg:text-[64px], line height aumentado -->
                             <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold leading-tight text-[#DDDB40]">Investimento inicial baixo e facilitado</h2>
                             <!-- P Ajustado: lg:text-[34px] e removido max-w-lg -->
                             <p class="text-lg md:text-xl lg:text-[34px] text-white font-light leading-tight">incluindo todos equipamentos necessários para começar o negócio e faturar!</p>
@@ -445,7 +447,8 @@
     <section class="w-full py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="space-y-2 text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#00968D]">Contato Direto</h2>
+                <!-- Aumentado para 42px -->
+                <h2 class="text-3xl md:text-[42px] font-bold text-[#00968D]">Contato Direto</h2>
                 <!-- Removido hover:text-[#00968D] e transition-colors -->
                 <!-- Adicionado font-bold -->
                 <p class="text-xl md:text-2xl text-[#333333]"><a href="https://api.whatsapp.com/send?phone=5519993043657&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL%0A" target="_blank" rel="noopener noreferrer" class="text-inherit no-underline font-bold">Fale com o gerente de franquias – clique aqui</a></p>
@@ -596,7 +599,7 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
+                <!-- Frase alinhada à esquerda com items acima, cor #00615A e NEGRITO -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
                     Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                 </p>
@@ -649,10 +652,10 @@
             <!-- Frase em MAIÚSCULAS e fonte 32px -->
             <h2 class="text-[32px] text-[#333333] font-light uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-sm md:text-base">Anos de experiência.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">100.000</span><p class="text-[#333333] text-sm md:text-base max-w-[200px]">Alunos que passam em nossas unidades todos os meses.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">229</span><p class="text-[#333333] text-sm md:text-base max-w-[200px]">Unidades presentes em todos os estados brasileiros.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">+200</span><p class="text-[#333333] text-sm md:text-base max-w-[200px]">Colaboradores e Parceiros. O seu crescimento é nosso compromisso.</p></div>
+                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-[20px] md:text-[20px]">Anos de experiência.</p></div>
+                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">100.000</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Alunos que passam em nossas unidades todos os meses.</p></div>
+                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">229</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Unidades presentes em todos os estados brasileiros.</p></div>
+                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">+200</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Colaboradores e Parceiros. O seu crescimento é nosso compromisso.</p></div>
             </div>
         </div>
     </section>
@@ -729,8 +732,8 @@
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (primeira unidade) e VOLL Pilates Studios Centro de Vilhena (segunda unidade)</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia<br>Primeira unidade: Estado: Avenida Carmelita Fermina dos Anjos, 5712 - Bairro Jardim Eldorado - CEP: 76987-182 - Vilhena/RO<br>Segunda unidade: Estado: Rondônia Cidade: Vilhena Rua: Avenida Major Amarante, centro N°: 4119 Complemento: Edifício Capra, sala 205 CEP: 76980-075</p>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (Centro)</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Segunda unidade em Rondônia</p>
                             </div>
                         </div>
                     </div>
