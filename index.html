@@ -94,25 +94,23 @@
     <!-- HERO SECTION -->
     <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0">
         <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <!-- Alterado: opacidade reduzida de bg-black/60 para bg-black/50 para clarear -->
+            <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <!-- Alterado de items-center para items-end para alinhar o texto à base do formulário -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-                <div class="text-white space-y-2 animate-fade-in-up pb-4 md:pb-0"> <!-- Adicionei um pequeno padding-bottom no mobile por segurança -->
-                    <!-- Font-weight normal mantido -->
+                <!-- Adicionado: -ml-4 lg:-ml-12 para puxar o texto mais para a esquerda -->
+                <div class="text-white space-y-2 animate-fade-in-up pb-4 md:pb-0 -ml-4 lg:-ml-12"> 
                     <h1 class="text-[40px] text-white leading-tight font-normal">
                         <span class="block">Franquia</span>
                         <span class="text-[#349980]">VOLL</span> <span class="text-[#349980]">Pilates Studios</span>
                     </h1>
                     
-                    <!-- Font-weight alterado para normal, tamanho para 25px, negrito adicionado -->
                     <h2 class="text-[25px] font-normal text-white max-w-lg leading-tight pt-4">
                         Tenha seu próprio Studio de Pilates com a marca do <strong class="font-bold">maior grupo do Brasil!</strong>
                     </h2>
                     
-                    <!-- Font-weight alterado para normal, tamanho para 25px -->
                     <p class="text-[25px] font-normal text-white max-w-lg leading-tight">
                         Já são mais de <strong class="font-bold text-[#349980]">229 Studios</strong> pelo país, com total suporte para seu sucesso e <strong class="font-bold text-[#349980]">alto potencial de lucro!</strong>
                     </p>
@@ -127,9 +125,7 @@
                     </div>
                 </div>
                 <!-- RD Station Form Container -->
-                <!-- AUMENTADO max-w-[550px] para max-w-[600px] para deixar o formulário mais largo ("gordo") -->
                 <div class="w-full max-w-[600px] mx-auto md:ml-auto">
-                    <!-- ADICIONADO STYLE OPACITY E BORDER-RADIUS -->
                     <div role="main" id="franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd" style="opacity: 0.9 !important; border-radius: 20px; overflow: hidden;"></div>
                 </div>
             </div>
@@ -139,7 +135,6 @@
     <!-- FEATURES SECTION -->
     <section class="w-full py-12 md:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- ALTERAÇÃO AQUI: gap-y-16 para mobile (64px de espaço) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-12">
                 <!-- Item 1 -->
                 <div class="flex items-start gap-4 text-left">
@@ -206,7 +201,6 @@
     </section>
 
     <!-- TARGET AUDIENCE SECTION -->
-    <!-- ALTERADO PARA lg:grid-cols-[40%_60%] para diminuir a coluna da esquerda -->
     <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]">
         <!-- Esquerda -->
         <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
@@ -274,11 +268,9 @@
             <div class="flex-1 bg-[#EEEEEE] py-16 px-6 md:px-10 lg:px-12 flex flex-col justify-center items-start">
                 <div class="max-w-2xl mx-auto lg:mx-0 space-y-6">
                     <div>
-                        <!-- Alterado para 42px -->
                         <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">Para quem é a franquia VOLL Pilates Studios?</h2>
                         <div class="w-[50px] h-[3px] bg-[#73CCD3] mt-6"></div>
                     </div>
-                    <!-- AQUI FOI A ALTERAÇÃO: text-[15px] -->
                     <div class="space-y-4 text-[#333333] text-[15px] leading-relaxed font-light">
                         <p>A franquia <strong class="font-bold">VOLL Studios</strong> é para quem deseja empreender em um dos mercados que mais crescem no Brasil: o de saúde, bem-estar e qualidade de vida.</p>
                         <p><strong class="font-bold">Você não precisa ser formado em fisioterapia, educação física ou enfermagem.</strong></p>
@@ -599,7 +591,7 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Frase alinhada à esquerda com items acima, cor #00615A e NEGRITO -->
+                <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
                     Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                 </p>
@@ -616,7 +608,7 @@
                 </a>
             </div>
             <div class="bg-[#00968D] py-8 flex justify-center items-center">
-                <!-- Botão E TEM MAIS (restaurado) - Borda branca, texto branco, fundo transparente, seta branca no hover -->
+                <!-- Borda aumentada para 3px -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>QUERO MAIS INFOS</span>
