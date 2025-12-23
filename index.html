@@ -99,8 +99,8 @@
         </div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <!-- Alterado de items-center para items-end para alinhar o texto à base do formulário -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+                <!-- Adicionado: -ml-4 lg:-ml-12 para puxar o texto mais para a esquerda -->
                 <div class="text-white space-y-2 animate-fade-in-up pb-4 md:pb-0 -ml-4 lg:-ml-12"> 
                     <h1 class="text-[40px] text-white leading-tight font-normal">
                         <span class="block">Franquia</span>
@@ -311,7 +311,7 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
             <div class="space-y-4">
                 <div class="w-[50px] h-[3px] bg-[#FFB400] mx-auto mb-6"></div>
-                <!-- Line height aumentado via style="line-height: 1.1;" -->
+                <!-- Line height aumentado via style="line-height: 1.0;" -->
                 <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold" style="line-height: 1.0;">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
                 <h3 class="text-xl md:text-[22px] font-bold text-gray-200">Empreenda com segurança, empreenda com a VOLL Studios.</h3>
             </div>
@@ -380,7 +380,7 @@
                 <div class="relative z-10 space-y-8">
                     <div class="flex border-l-4 border-[#DDDB40] pl-6 py-2">
                         <div class="space-y-4">
-                            <!-- H2 Ajustado: lg:text-[64px], line height aumentado via style="line-height: 1.1;" -->
+                            <!-- H2 Ajustado: lg:text-[64px], line height aumentado via style="line-height: 1.0;" -->
                             <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold text-[#DDDB40]" style="line-height: 1.0;">Investimento inicial baixo e facilitado</h2>
                             <!-- P Ajustado: lg:text-[34px] e removido max-w-lg. Leading alterado para normal. -->
                             <p class="text-lg md:text-xl lg:text-[34px] text-white font-light leading-normal">incluindo todos equipamentos necessários para começar o negócio e faturar!</p>
@@ -591,27 +591,16 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Frase alinhada à esquerda com items acima, cor #00615A e NEGRITO -->
+                <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
                     Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                 </p>
 
                 <div class="flex justify-center items-center gap-4 pt-4">
-                   <span class="font-bold text-[#333333] text-lg hidden md:block">WhatsApp</span>
-                   <button 
-                      onclick="window.scrollTo({top:0, behavior:'smooth'})"
-                      class="group flex items-center justify-center gap-2 bg-[#FFB400] text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <!-- Espaçador invisível para simetria -->
-                      <div class="w-6 h-6" aria-hidden="true"></div>
-                      
-                      <span>QUERO MAIS INFOS</span>
-                      
-                      <!-- Espaço fixo reservado para o ícone (w-6) -->
-                      <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                      </div>
-                    </button>
+                   <!-- BOTÃO RESTAURADO COM ESTILO E TEM MAIS (Fundo transparente, borda branca) -->
+                   <!-- MAS ESPERA, a imagem de referência mostrava este botão aqui? Ou eu removi porque estava errado antes? -->
+                   <!-- O usuário disse: "remova esta bosta dessa sessao que voce inventou denovo ... tem um botao Whatsapp e quero mais infos que nao era pra estar ali" -->
+                   <!-- Portanto, NÃO devo colocar botões aqui. Mantendo removido. -->
                 </div>
             </div>
         </div>
@@ -626,7 +615,9 @@
                 </a>
             </div>
             <div class="bg-[#00968D] py-8 flex justify-center items-center">
-                <!-- Botão E TEM MAIS (restaurado) - Borda branca, texto branco, fundo transparente, seta branca no hover -->
+                <!-- BOTAO DO GRID (ESTE DEVE TER O ESTILO CORRETO: Transparente + Borda Branca) -->
+                <!-- O usuário disse: "para de mexer no botao da sessao E tem mais…! voce alterou denovo, é pra ficar como na terceira print" -->
+                <!-- A terceira print mostrava fundo transparente e borda branca. Vou garantir isso aqui. -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>QUERO MAIS INFOS</span>
@@ -772,9 +763,9 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-[#4A4A4A] py-12">
+    <footer class="bg-[#141414] py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-white text-sm">© <span id="year"></span> VOLL Pilates Studios. Todos os direitos reservados.</p>
+            <p class="text-white text-sm">© 2009-2025 VOLL Pilates Group. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -790,9 +781,6 @@
              }
         };
         document.body.appendChild(rdScript);
-
-        // --- Year ---
-        document.getElementById('year').textContent = new Date().getFullYear();
 
         // --- Scroll To Top Helper ---
         function scrollToTop() {
@@ -919,4 +907,4 @@
 
     </script>
 </body>
-</html>s
+</html>
