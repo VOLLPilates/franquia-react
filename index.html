@@ -317,8 +317,8 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
             <div class="space-y-4">
                 <div class="w-[50px] h-[3px] bg-[#FFB400] mx-auto mb-6"></div>
-                <!-- Alterado para 64px (lg:text-[64px]) e leading maior (leading-snug) -->
-                <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold leading-snug">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
+                <!-- Line height aumentado: leading-normal -->
+                <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold leading-normal">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
                 <h3 class="text-xl md:text-[22px] font-bold text-gray-200">Empreenda com segurança, empreenda com a VOLL Studios.</h3>
             </div>
             <div class="flex flex-col items-center gap-2 py-0">
@@ -447,7 +447,8 @@
             <div class="space-y-2 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#00968D]">Contato Direto</h2>
                 <!-- Removido hover:text-[#00968D] e transition-colors -->
-                <p class="text-xl md:text-2xl text-[#333333]"><a href="https://api.whatsapp.com/send?phone=5519993043657&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL%0A" target="_blank" rel="noopener noreferrer" class="text-inherit no-underline">Fale com o gerente de franquias – clique aqui</a></p>
+                <!-- Adicionado font-bold -->
+                <p class="text-xl md:text-2xl text-[#333333]"><a href="https://api.whatsapp.com/send?phone=5519993043657&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL%0A" target="_blank" rel="noopener noreferrer" class="text-inherit no-underline font-bold">Fale com o gerente de franquias – clique aqui</a></p>
             </div>
             <!-- Borda aumentada para 3px -->
             <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-white border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300">
@@ -595,28 +596,29 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Frase alinhada à esquerda com items acima, cor #00615A e NEGRITO -->
+                <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
                     Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                 </p>
-
-                <div class="flex justify-center items-center gap-4 pt-4">
-                   <span class="font-bold text-[#333333] text-lg hidden md:block">WhatsApp</span>
-                   <button 
-                      onclick="window.scrollTo({top:0, behavior:'smooth'})"
-                      class="group flex items-center justify-center gap-2 bg-[#FFB400] text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <!-- Espaçador invisível para simetria -->
-                      <div class="w-6 h-6" aria-hidden="true"></div>
-                      
-                      <span>QUERO MAIS INFOS</span>
-                      
-                      <!-- Espaço fixo reservado para o ícone (w-6) -->
-                      <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                      </div>
-                    </button>
-                </div>
+            </div>
+        </div>
+        <!-- CTA GRID -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-2">
+            <div class="bg-[#2A2A2A] py-8 flex justify-center items-center">
+                <!-- Borda aumentada para 3px -->
+                <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline">
+                    <div class="w-6 h-6" aria-hidden="true"></div>
+                    <span>WhatsApp</span>
+                    <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                </a>
+            </div>
+            <div class="bg-[#00968D] py-8 flex justify-center items-center">
+                <!-- Botão E TEM MAIS (restaurado) - Borda branca, texto branco, fundo transparente, seta branca no hover -->
+                <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300">
+                    <div class="w-6 h-6" aria-hidden="true"></div>
+                    <span>QUERO MAIS INFOS</span>
+                    <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                </button>
             </div>
         </div>
     </section>
@@ -642,10 +644,10 @@
         <div class="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-12">
             <a href="https://vollpilates.com.br/" target="_blank" rel="noopener noreferrer">
                 <!-- Imagem aumentada para 167px de altura -->
-                <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="VOLL Pilates Group" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" loading="lazy">
+                <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="VOLL Pilates Group" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" width="200" height="80" loading="lazy">
             </a>
             <!-- Frase em MAIÚSCULAS e fonte 32px -->
-            <h2 class="text-[32px] text-[#333333] font-light max-w-3xl uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
+            <h2 class="text-[32px] text-[#333333] font-light uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-sm md:text-base">Anos de experiência.</p></div>
                 <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">100.000</span><p class="text-[#333333] text-sm md:text-base max-w-[200px]">Alunos que passam em nossas unidades todos os meses.</p></div>
@@ -658,7 +660,6 @@
     <!-- TESTIMONIALS SECTION (HTML Puro) -->
     <section class="w-full py-16 bg-white overflow-hidden relative" id="testimonials-section">
         <div class="max-w-6xl mx-auto px-12 relative">
-            <!-- Título adicionado: Histórias reais de pessoas reais -->
             <h2 class="text-center text-[42px] font-bold text-[#333333] mb-12">Histórias reais de pessoas reais</h2>
 
             <!-- Arrows -->
@@ -675,9 +676,9 @@
                                 <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Teresina" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-bold text-xl md:text-2xl leading-tight">Franqueadas: Ianca Ravale e Nayara Thayrine</h3>
-                                <h4 class="text-[#333333] font-bold text-lg">VOLL Pilates Studios Teresina</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Piauí - Ed. Diamond Center, sala 50</p>
+                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueadas: Ianca Ravale de Meneses Fortes e Nayara Thayrine</h3>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Teresina</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Piauí - Estado: Piauí Cidade: Teresinha Rua: Avenida Universitária N°: 750 Complemento: Ed. Diamond Center, sala 50 CEP: 64049-494</p>
                             </div>
                         </div>
                     </div>
@@ -688,9 +689,9 @@
                                 <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Vilhena" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-bold text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
-                                <h4 class="text-[#333333] font-bold text-lg">VOLL Pilates Studios Vilhena</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia - Duas unidades</p>
+                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (primeira unidade) e VOLL Pilates Studios Centro de Vilhena (segunda unidade)</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia<br>Primeira unidade: Avenida Carmelita Fermina dos Anjos, 5712 - Bairro Jardim Eldorado - CEP: 76987-182 - Vilhena/RO<br>Segunda unidade: Estado: Rondônia Cidade: Vilhena Rua: Avenida Major Amarante, centro N°: 4119 Complemento: Edifício Capra, sala 205 CEP: 76980-075</p>
                             </div>
                         </div>
                     </div>
@@ -701,9 +702,9 @@
                                 <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Holambra" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-bold text-xl md:text-2xl leading-tight">Franqueada Jessica Wopereis</h3>
-                                <h4 class="text-[#333333] font-bold text-lg">VOLL Pilates Studios Holambra</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em São Paulo</p>
+                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Jessica Wopereis</h3>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Holambra</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em São Paulo - Estado: São Paulo Cidade: Holambra Rua: Solidagos N°: 320 Complemento: CEP: 13827-006</p>
                             </div>
                         </div>
                     </div>
@@ -714,9 +715,9 @@
                                 <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Rio Branco" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-bold text-xl md:text-2xl leading-tight">Franqueada Elaine Cristina</h3>
-                                <h4 class="text-[#333333] font-bold text-lg">VOLL Pilates Studios Rio Branco</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Acre</p>
+                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Elaine Cristina</h3>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Rio Branco</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Acre - Estado: Acre Cidade: Rio Branco Rua: Rua Vênus N°: 148 Complemento: Sala 3 CEP: 69901-097</p>
                             </div>
                         </div>
                     </div>
@@ -727,9 +728,9 @@
                                 <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-bold text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
-                                <h4 class="text-[#333333] font-bold text-lg">VOLL Pilates Studios Vilhena (Centro)</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Segunda unidade em Rondônia</p>
+                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
+                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (primeira unidade) e VOLL Pilates Studios Centro de Vilhena (segunda unidade)</h4>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia<br>Primeira unidade: Estado: Avenida Carmelita Fermina dos Anjos, 5712 - Bairro Jardim Eldorado - CEP: 76987-182 - Vilhena/RO<br>Segunda unidade: Estado: Rondônia Cidade: Vilhena Rua: Avenida Major Amarante, centro N°: 4119 Complemento: Edifício Capra, sala 205 CEP: 76980-075</p>
                             </div>
                         </div>
                     </div>
