@@ -753,6 +753,7 @@
 
             // --- Carousel Logic ---
             const track = document.getElementById('carousel-track');
+            const viewport = document.querySelector('.carousel-viewport');
             const slides = Array.from(document.querySelectorAll('.slide-item'));
             const dotsContainer = document.getElementById('carousel-dots');
             
@@ -806,6 +807,108 @@
                 const percentage = 100 / itemsPerPage;
                 track.style.transform = `translateX(-${currentIndex * percentage}%)`;
                 updateActiveDot();
+            }
+
+            // --- Touch/Pointer drag (mobile swipe) ---
+            let isPointerDown = false;
+            let startX = 0;
+            let startY = 0;
+            let baseTranslatePct = 0;
+            let isDragging = false;
+            let ignoreClick = false;
+            let activePointerId = null;
+
+            function getViewportWidth() {
+                return (viewport && viewport.getBoundingClientRect().width) || window.innerWidth || 1;
+            }
+
+            function setTranslatePct(pct) {
+                track.style.transform = `translateX(${pct}%)`;
+            }
+
+            if (viewport && window.PointerEvent) {
+                viewport.addEventListener('pointerdown', (e) => {
+                    // only primary button for mouse; for touch it's always ok
+                    if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+                    isPointerDown = true;
+                    isDragging = false;
+                    activePointerId = e.pointerId;
+                    startX = e.clientX;
+                    startY = e.clientY;
+
+                    const stepPct = 100 / itemsPerPage;
+                    baseTranslatePct = -(currentIndex * stepPct);
+
+                    // remove transition while dragging
+                    track.style.transition = 'none';
+
+                    try { viewport.setPointerCapture(e.pointerId); } catch (_) {}
+                }, { passive: true });
+
+                viewport.addEventListener('pointermove', (e) => {
+                    if (!isPointerDown) return;
+                    if (activePointerId !== null && e.pointerId !== activePointerId) return;
+
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+
+                    // start dragging only if horizontal intent is clear
+                    if (!isDragging) {
+                        if (Math.abs(dx) < 6) return;
+                        if (Math.abs(dx) <= Math.abs(dy)) return;
+                        isDragging = true;
+                    }
+
+                    // prevent vertical scroll once dragging horizontally
+                    e.preventDefault();
+
+                    const vw = getViewportWidth();
+                    const dxPct = (dx / vw) * 100;
+                    setTranslatePct(baseTranslatePct + dxPct);
+                }, { passive: false });
+
+                function endPointerDrag(e) {
+                    if (!isPointerDown) return;
+                    if (activePointerId !== null && e.pointerId !== activePointerId) return;
+
+                    const dx = e.clientX - startX;
+                    const vw = getViewportWidth();
+                    const thresholdPx = Math.min(80, vw * 0.22);
+
+                    isPointerDown = false;
+                    activePointerId = null;
+
+                    // restore transition
+                    track.style.transition = '';
+
+                    if (isDragging) {
+                        ignoreClick = true;
+                        window.setTimeout(() => { ignoreClick = false; }, 0);
+
+                        if (dx <= -thresholdPx) {
+                            nextSlide();
+                        } else if (dx >= thresholdPx) {
+                            prevSlide();
+                        } else {
+                            updateCarousel();
+                        }
+                    } else {
+                        updateCarousel();
+                    }
+
+                    isDragging = false;
+                }
+
+                viewport.addEventListener('pointerup', endPointerDrag, { passive: true });
+                viewport.addEventListener('pointercancel', endPointerDrag, { passive: true });
+
+                // If user dragged, prevent the synthetic click (e.g. on video thumbs)
+                track.addEventListener('click', (e) => {
+                    if (!ignoreClick) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, true);
             }
 
             function nextSlide() {
