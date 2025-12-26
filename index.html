@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://d335luupugsy2.cloudfront.net" crossorigin>
     
     <!-- Preload da Imagem Hero (LCP) -->
-    <link rel="preload" as="image" href="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp">
+    <link rel="preload" as="image" href="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp" fetchpriority="high" imagesizes="100vw">
 
     <!-- Google Fonts (não-bloqueante; mantém display=swap) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
@@ -22,8 +22,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </noscript>
 
-    <link rel="preload" as="style" href="styles.css?v=1">
-    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="preload" as="style" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -758,10 +758,11 @@
             
             let currentIndex = 0;
             let dotButtons = [];
-            let itemsPerPage = window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
+            const mqDesktop = window.matchMedia('(min-width: 768px)');
+            let itemsPerPage = mqDesktop.matches ? 3 : 1;
 
             function getItemsPerPage() {
-                return window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
+                return mqDesktop.matches ? 3 : 1;
             }
 
             function getTotalDots() {
