@@ -1382,6 +1382,88 @@ button:focus-visible {
   background: var(--brand-teal);
 }
 
+/* Mobile refinements */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero__grid {
+    gap: 2rem;
+  }
+
+  .hero__copy {
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .hero__subtitle,
+  .hero__lead {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .hero__subtitle {
+    padding-top: 0.75rem;
+  }
+
+  .hero__cta {
+    padding-top: 1.25rem;
+  }
+
+  .benefits__inner {
+    padding: 3rem 0;
+  }
+
+  .benefits__title {
+    font-size: 1.6rem;
+    line-height: 1.15;
+  }
+
+  .benefits__intro {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .benefits__split {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .benefits__col {
+    gap: 1.5rem;
+  }
+
+  .benefits__text {
+    font-size: 1rem;
+  }
+
+  .benefits__more-title {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .testimonials {
+    padding: 3rem 0;
+  }
+
+  .testimonials__inner {
+    padding: 0;
+  }
+
+  .testimonials__title {
+    font-size: 1.6rem;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+}
+
 .benefits__bullets {
   margin-top: 1rem;
   display: grid;
