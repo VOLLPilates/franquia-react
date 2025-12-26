@@ -52,7 +52,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- LOGO -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <!-- ACESSIBILIDADE: Alt text adicionado + fetchpriority -->
+                    <!-- ACESSIBILIDADE: Alt text adicionado + fetchpriority + width/height -->
                     <img 
                         src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/VOLL-PILATES-Logotipo-Institucional-Branco-01.webp" 
                         alt="Logotipo VOLL Pilates Studios" 
@@ -64,7 +64,7 @@
                 </div>
 
                 <!-- DESKTOP NAV -->
-                <nav class="hidden md:flex items-center space-x-8">
+                <nav class="hidden md:flex items-center space-x-8" aria-label="Menu Principal">
                     <a href="#" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Perfil do Franqueado
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -83,8 +83,8 @@
                 <div class="md:hidden flex items-center">
                     <!-- ACESSIBILIDADE: aria-label adicionado -->
                     <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors" aria-label="Abrir menu de navegação">
-                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
@@ -92,7 +92,7 @@
 
         <!-- MOBILE MENU DRAWER -->
         <div id="mobile-menu" class="hidden bg-[#4A4A4A] border-t border-gray-600 overflow-hidden transition-all duration-300 ease-in-out">
-            <nav class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
+            <nav class="px-4 pt-2 pb-4 space-y-1 flex flex-col" aria-label="Menu Mobile">
                 <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Perfil do Franqueado</a>
                 <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Contato</a>
                 <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Área do Franqueado</a>
@@ -101,14 +101,12 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0">
+    <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0" aria-label="Introdução">
         <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');" role="img" aria-label="Imagem de fundo de um estúdio de Pilates moderno">
-            <!-- Alterado: opacidade reduzida de bg-black/60 para bg-black/50 para clarear -->
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <!-- Alterado de items-center para items-end para alinhar o texto à base do formulário -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
                 <div class="text-white space-y-2 animate-fade-in-up pb-4 md:pb-0 -ml-4 lg:-ml-12"> 
                     <h1 class="text-[40px] text-white leading-tight font-normal">
@@ -125,7 +123,7 @@
                     </p>
                     
                     <div class="pt-8">
-                        <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden">
+                        <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden" aria-label="Falar no WhatsApp para ser um franqueado">
                             <span>Quero ser um franqueado!</span>
                             <div class="w-0 group-hover:w-[28px] transition-all duration-500 flex justify-end overflow-hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
@@ -143,7 +141,7 @@
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="w-full py-12 md:py-16 bg-white">
+    <section class="w-full py-12 md:py-16 bg-white" aria-label="Diferenciais da Franquia">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-12">
                 <!-- Item 1 -->
@@ -212,15 +210,15 @@
     </section>
 
     <!-- TARGET AUDIENCE SECTION -->
-    <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]">
+    <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]" aria-label="Público Alvo e Benefícios">
         <!-- Esquerda -->
         <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
-            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" aria-hidden="true">
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" role="img" aria-label="Imagem de fundo de uma aula de Pilates">
                 <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,150,141,0.84), #29c4a9);"></div>
             </div>
             <div class="relative z-10 space-y-8 max-w-sm mx-0 lg:mx-0">
                 <div class="space-y-8">
-                     <!-- Itens da lista com aria-hidden nos ícones decorativos -->
+                     <!-- Itens da lista -->
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
@@ -317,8 +315,8 @@
     </section>
 
     <!-- SECURITY SECTION -->
-    <section class="relative w-full py-20 md:py-28">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');" aria-hidden="true">
+    <section class="relative w-full py-20 md:py-28" aria-label="Segurança do Investimento">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');" role="img" aria-label="Interior de um estúdio VOLL Pilates">
             <div class="absolute inset-0 bg-black/75"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
@@ -330,7 +328,7 @@
             </div>
             <div class="flex flex-col items-center gap-2 py-0">
                 <p class="text-[22px] text-gray-300 max-w-2xl leading-relaxed">Somos associados à <strong class="text-white">ABF</strong>, garantindo ainda mais transparência, credibilidade e confiança para você investir no seu próprio Studio de Pilates com a força de uma marca reconhecida do Brasil e no mundo.</p>
-                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block">
+                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF">
                     <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/Associacao-Brasileira-de-Franchising-e1758288849748.webp" alt="Selo Associação Brasileira de Franchising" class="h-10 md:h-14 w-auto object-contain" width="200" height="80" loading="lazy">
                 </a>
             </div>
@@ -387,7 +385,7 @@
             
             <!-- Coluna Esquerda: Imagem de Fundo com Overlay (Agora ocupa 70%) -->
             <div class="relative flex flex-col justify-center py-20 px-6 lg:px-12 xl:px-20">
-                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');" aria-hidden="true">
+                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');" role="img" aria-label="Mapa de expansão da franquia">
                     <div class="absolute inset-0" style="background-color: rgba(40,40,40,0.79);"></div>
                 </div>
                 <div class="relative z-10 space-y-8">
@@ -581,28 +579,6 @@
                 </div>
             </div>
 
-            <div class="space-y-6 mb-12">
-                <h3 class="text-2xl font-bold text-[#333333]">E tem mais…</h3>
-                <!-- HR Fino e #00968D -->
-                <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
-                
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex gap-4 items-center">
-                        <!-- Ícone de lista simples (bullet) -->
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Kit de identidade visual e</strong> materiais para inauguração.</p>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Painel de recepção exclusivo</strong> com a logo VOLL Studios.</p>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Equipamentos e itens para estrutura inicial do</strong> espaço (tinta, bebedouro, acessórios oficiais).</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="space-y-8">
                 <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
@@ -610,10 +586,7 @@
                 </p>
 
                 <div class="flex justify-center items-center gap-4 pt-4">
-                   <!-- BOTÃO RESTAURADO COM ESTILO E TEM MAIS (Fundo transparente, borda branca) -->
-                   <!-- MAS ESPERA, a imagem de referência mostrava este botão aqui? Ou eu removi porque estava errado antes? -->
-                   <!-- O usuário disse: "remova esta bosta dessa sessao que voce inventou denovo ... tem um botao Whatsapp e quero mais infos que nao era pra estar ali" -->
-                   <!-- Portanto, NÃO devo colocar botões aqui. Mantendo removido. -->
+                   <!-- REMOVIDO WHATSAPP E BOTÃO DAQUI -->
                 </div>
             </div>
         </div>
