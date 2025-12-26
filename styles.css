@@ -473,7 +473,7 @@ button:focus-visible {
 .btn--outline-gold {
   background: transparent;
   border: 3px solid var(--gold);
-  color: var(--gold-text);
+  color: var(--gold);
   padding: 1rem 2rem;
   border-radius: 0;
 }
@@ -481,6 +481,66 @@ button:focus-visible {
 .btn--outline-gold:hover {
   background: var(--gold);
   color: var(--white);
+}
+
+/* Contact Direct */
+.contact-direct {
+  background: var(--white);
+  padding: 3.5rem 0;
+}
+
+.contact-direct__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-direct__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.contact-direct__title {
+  margin: 0;
+  font-weight: 800;
+  color: var(--brand-teal);
+  line-height: 1.05;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-direct__title {
+    font-size: 3.25rem;
+  }
+}
+
+.contact-direct__subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-direct__action {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contact-direct__action {
+    width: auto;
+  }
+}
+
+.contact-direct__btn {
+  min-width: 320px;
+  justify-content: center;
+  letter-spacing: 0.35em;
+  font-size: 0.875rem;
+  padding: 1.1rem 2.2rem;
 }
 
 .btn--outline-white {
