@@ -1278,7 +1278,8 @@ button:focus-visible {
 .benefits__inner {
   max-width: 72rem;
   margin: 0 auto;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .benefits__title {
@@ -1389,6 +1390,12 @@ button:focus-visible {
     padding-right: 1.25rem;
   }
 
+  /* Títulos (h2) mais consistentes no mobile */
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.15;
+  }
+
   .hero__grid {
     gap: 2rem;
   }
@@ -1418,7 +1425,8 @@ button:focus-visible {
   }
 
   .benefits__inner {
-    padding: 3rem 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .benefits__title {
@@ -1458,9 +1466,18 @@ button:focus-visible {
   }
 
   .testimonials__title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     line-height: 1.15;
     margin-bottom: 2rem;
+  }
+
+  .solidity {
+    padding: 3rem 0;
+  }
+
+  .solidity__title {
+    font-size: 1.45rem;
+    line-height: 1.2;
   }
 }
 
