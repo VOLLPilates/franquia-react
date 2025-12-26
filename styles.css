@@ -703,7 +703,7 @@ button:focus-visible {
 
 @media (min-width: 1024px) {
   .target {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 65%;
   }
 }
 
@@ -751,6 +751,12 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   max-width: 24rem;
+}
+
+@media (min-width: 1024px) {
+  .target__left-content {
+    max-width: 30rem;
+  }
 }
 
 .target__list {
@@ -817,9 +823,12 @@ button:focus-visible {
 
 @media (min-width: 1024px) {
   .target__content {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
