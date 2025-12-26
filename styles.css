@@ -1630,11 +1630,7 @@ button:focus-visible {
   height: 167px;
   width: auto;
   object-fit: contain;
-  transition: opacity 200ms ease;
-}
-
-.solidity__logo:hover {
-  opacity: 0.8;
+  display: block;
 }
 
 .solidity__title {
