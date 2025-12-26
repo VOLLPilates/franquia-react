@@ -1720,9 +1720,6 @@ button:focus-visible {
 
 .carousel-viewport {
   overflow: hidden;
-  touch-action: pan-y;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 #carousel-track {
