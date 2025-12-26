@@ -27,6 +27,19 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
+        /* Classe para leitores de tela (Acessibilidade/SEO) - Esconde visualmente mas mantem no DOM */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
         /* Animações */
         .fade-in { animation: fadeIn 0.3s ease-out forwards; }
         .slide-up { animation: fadeInUp 0.6s ease-out forwards; }
@@ -52,10 +65,9 @@
             <div class="flex justify-between items-center h-16">
                 <!-- LOGO -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <!-- ACESSIBILIDADE: Alt text adicionado + fetchpriority + width/height -->
                     <img 
                         src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/VOLL-PILATES-Logotipo-Institucional-Branco-01.webp" 
-                        alt="Logotipo VOLL Pilates Studios" 
+                        alt="VOLL Pilates Studios - Logotipo Branco" 
                         class="h-10 w-auto object-contain" 
                         width="150" 
                         height="40"
@@ -65,17 +77,14 @@
 
                 <!-- DESKTOP NAV -->
                 <nav class="hidden md:flex items-center space-x-8" aria-label="Menu Principal">
-                    <!-- Link atualizado para rolar até a seção de público alvo -->
                     <a href="#target-audience" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Perfil do Franqueado
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     </a>
-                    <!-- Link atualizado para rolar até o formulário -->
                     <a href="#hero" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Contato
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     </a>
-                    <!-- Link externo atualizado -->
                     <a href="https://franquiadepilates.com.br/areadofranqueado/" target="_blank" rel="noopener noreferrer" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Área do Franqueado
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -84,8 +93,8 @@
 
                 <!-- MOBILE MENU BUTTON -->
                 <div class="md:hidden flex items-center">
-                    <!-- ACESSIBILIDADE: aria-label adicionado -->
-                    <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors" aria-label="Abrir menu de navegação">
+                    <!-- Acessibilidade: aria-label e área de toque -->
+                    <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors p-2" aria-label="Abrir menu de navegação">
                         <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
                         <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
@@ -96,7 +105,6 @@
         <!-- MOBILE MENU DRAWER -->
         <div id="mobile-menu" class="hidden bg-[#4A4A4A] border-t border-gray-600 overflow-hidden transition-all duration-300 ease-in-out">
             <nav class="px-4 pt-2 pb-4 space-y-1 flex flex-col" aria-label="Menu Mobile">
-                <!-- Links mobile atualizados -->
                 <a href="#target-audience" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Perfil do Franqueado</a>
                 <a href="#hero" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Contato</a>
                 <a href="https://franquiadepilates.com.br/areadofranqueado/" target="_blank" rel="noopener noreferrer" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Área do Franqueado</a>
@@ -105,9 +113,8 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0" aria-label="Introdução">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');" role="img" aria-label="Imagem de fundo de um estúdio de Pilates moderno">
-            <!-- Overlay -->
+    <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0" aria-label="Introdução e Cadastro">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');" role="img" aria-label="Ambiente interno de um estúdio VOLL Pilates">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
@@ -128,7 +135,7 @@
                     </p>
                     
                     <div class="pt-8">
-                        <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden" aria-label="Falar no WhatsApp para ser um franqueado">
+                        <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden" aria-label="Falar com consultor no WhatsApp">
                             <span>Quero ser um franqueado!</span>
                             <div class="w-0 group-hover:w-[28px] transition-all duration-500 flex justify-end overflow-hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
@@ -138,25 +145,25 @@
                 </div>
                 <!-- RD Station Form Container -->
                 <div class="w-full max-w-[600px] mx-auto md:ml-auto">
-                    <!-- Aria-label adicionado para acessibilidade -->
-                    <div role="region" aria-label="Formulário de Inscrição" id="franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd" style="opacity: 0.9 !important; border-radius: 20px; overflow: hidden;"></div>
+                    <!-- Acessibilidade: role region e aria-label -->
+                    <div role="region" aria-label="Formulário de Cadastro" id="franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd" style="opacity: 0.9 !important; border-radius: 20px; overflow: hidden;"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="w-full py-12 md:py-16 bg-white" aria-label="Diferenciais da Franquia">
+    <section class="w-full py-12 md:py-16 bg-white" aria-labelledby="features-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- ACESSIBILIDADE: Título invisível para corrigir hierarquia (H1 -> H2 -> H3) -->
-            <h2 class="sr-only">Nossos Diferenciais</h2>
+            <!-- Acessibilidade: Título oculto para manter hierarquia H2 -->
+            <h2 id="features-heading" class="sr-only">Nossos Diferenciais e Vantagens</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-12">
                 <!-- Item 1 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <!-- Otimização: Width/Height, Lazy Loading e Alt text descritivo -->
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="Ícone de mala representando investimento facilitado" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <!-- Acessibilidade: alt vazio pois é decorativo ao lado do título -->
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">INVESTIMENTO FACILITADO</h3>
@@ -166,7 +173,7 @@
                 <!-- Item 2 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="Ícone de caixa de presente representando equipamentos inclusos" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">EQUIPAMENTOS</h3>
@@ -176,7 +183,7 @@
                 <!-- Item 3 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="Ícone de gráfico subindo representando escalabilidade" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">ESCALABILIDADE</h3>
@@ -186,7 +193,7 @@
                 <!-- Item 4 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="Ícone de professor representando formação técnica" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FORMAÇÃO TÉCNICA</h3>
@@ -196,7 +203,7 @@
                 <!-- Item 5 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="Ícone de documento representando direitos de marca" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">DIREITOS DA MARCA</h3>
@@ -206,7 +213,7 @@
                 <!-- Item 6 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="Ícone de mão segurando dinheiro representando faturamento" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FATURE MUITO!</h3>
@@ -218,15 +225,15 @@
     </section>
 
     <!-- TARGET AUDIENCE SECTION -->
-    <section id="target-audience" class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]" aria-label="Público Alvo e Benefícios">
+    <section id="target-audience" class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]" aria-label="Público Alvo">
         <!-- Esquerda -->
         <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
-            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" role="img" aria-label="Imagem de fundo de uma aula de Pilates">
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" role="img" aria-label="Instrutora em aula de Pilates">
                 <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,150,141,0.84), #29c4a9);"></div>
             </div>
             <div class="relative z-10 space-y-8 max-w-sm mx-0 lg:mx-0">
                 <div class="space-y-8">
-                     <!-- Itens da lista -->
+                     <!-- Itens da lista com aria-hidden nos ícones SVG -->
                      <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
@@ -285,11 +292,9 @@
             <div class="flex-1 bg-[#EEEEEE] py-16 px-6 md:px-10 lg:px-12 flex flex-col justify-center items-start">
                 <div class="max-w-2xl mx-auto lg:mx-0 space-y-6">
                     <div>
-                        <!-- Alterado para 42px -->
                         <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">Para quem é a franquia VOLL Pilates Studios?</h2>
                         <div class="w-[50px] h-[3px] bg-[#73CCD3] mt-6"></div>
                     </div>
-                    <!-- AQUI FOI A ALTERAÇÃO: text-[15px] -->
                     <div class="space-y-4 text-[#333333] text-[15px] leading-relaxed font-light">
                         <p>A franquia <strong class="font-bold">VOLL Studios</strong> é para quem deseja empreender em um dos mercados que mais crescem no Brasil: o de saúde, bem-estar e qualidade de vida.</p>
                         <p><strong class="font-bold">Você não precisa ser formado em fisioterapia, educação física ou enfermagem.</strong></p>
@@ -310,7 +315,7 @@
             </div>
             <!-- Padding reduzido para py-8 -->
             <div class="bg-[#2A2A2A] py-8 px-6 md:px-10 lg:px-12 flex items-center">
-                <!-- Borda aumentada para 3px -->
+                <!-- Acessibilidade: aria-label -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero minha franquia VOLL Pilates">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>Quero minha franquia VOLL Pilates</span>
@@ -324,24 +329,24 @@
 
     <!-- SECURITY SECTION -->
     <section class="relative w-full py-20 md:py-28" aria-label="Segurança do Investimento">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');" role="img" aria-label="Interior de um estúdio VOLL Pilates">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp');" role="img" aria-label="Estúdio com equipamentos modernos">
             <div class="absolute inset-0 bg-black/75"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
             <div class="space-y-4">
                 <div class="w-[50px] h-[3px] bg-[#FFB400] mx-auto mb-6"></div>
-                <!-- Line height aumentado via style="line-height: 1.0;" -->
                 <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold" style="line-height: 1.0;">O Studio 230 será seu? <br /><span class="text-white">Facilidade, respaldo e segurança!</span></h2>
                 <h3 class="text-xl md:text-[22px] font-bold text-gray-200">Empreenda com segurança, empreenda com a VOLL Studios.</h3>
             </div>
             <div class="flex flex-col items-center gap-2 py-0">
                 <p class="text-[22px] text-gray-300 max-w-2xl leading-relaxed">Somos associados à <strong class="text-white">ABF</strong>, garantindo ainda mais transparência, credibilidade e confiança para você investir no seu próprio Studio de Pilates com a força de uma marca reconhecida do Brasil e no mundo.</p>
-                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF (abre em nova aba)">
+                <!-- Acessibilidade: Link com texto descritivo -->
+                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF">
                     <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/Associacao-Brasileira-de-Franchising-e1758288849748.webp" alt="Selo Associação Brasileira de Franchising" class="h-10 md:h-14 w-auto object-contain" width="200" height="80" loading="lazy">
                 </a>
             </div>
             <div class="flex flex-col items-center gap-4 pt-0">
-                <!-- Botão com padding horizontal reduzido (px-4) e expande à direita no hover (hover:pr-12) -->
+                <!-- Acessibilidade: aria-label -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-[#FFB400] text-black font-bold py-4 px-4 hover:pr-12 uppercase tracking-widest text-sm md:text-base rounded-none shadow-lg hover:shadow-xl transition-all duration-300" aria-label="Conheça nossas formas de parcelamento">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>Conheça nossas formas de parcelamento</span>
@@ -358,23 +363,19 @@
     <section class="w-full py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 text-center space-y-8">
             <div class="space-y-2">
-                <!-- Alterado para 42px -->
                 <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">Clique AGORA e fale com nossos especialistas</h2>
             </div>
             <div class="flex flex-col md:flex-row justify-center gap-6 items-start">
                 <div class="flex flex-col items-center gap-2">
-                    <!-- Borda aumentada para 3px -->
-                    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 min-w-[300px]" aria-label="Venha ser nosso franqueado de número 230">
+                    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 min-w-[300px]" aria-label="Venha ser nosso franqueado">
                         <div class="w-6 h-6" aria-hidden="true"></div>
                         <span>Venha ser nosso franqueado de número 230</span>
                         <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </div>
                     </button>
-                    <!-- Ajustado para 400px para alinhar com a largura provável do botão e text-sm (14px) -->
                     <p class="text-sm text-gray-500 max-w-[400px] text-center">Não vendemos Equipamentos ou Acessórios de forma avulsa. Temos apenas o modelo de Franquia!</p>
                 </div>
-                <!-- Borda aumentada para 3px -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 min-h-[56px]" aria-label="Vai aproveitar?">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>Vai aproveitar?</span>
@@ -392,20 +393,17 @@
             
             <!-- Coluna Esquerda: Imagem de Fundo com Overlay (Agora ocupa 70%) -->
             <div class="relative flex flex-col justify-center py-20 px-6 lg:px-12 xl:px-20">
-                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');" role="img" aria-label="Mapa de expansão da franquia">
+                <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp');" role="img" aria-label="Mapa">
                     <div class="absolute inset-0" style="background-color: rgba(40,40,40,0.79);"></div>
                 </div>
                 <div class="relative z-10 space-y-8">
                     <div class="flex border-l-4 border-[#DDDB40] pl-6 py-2">
                         <div class="space-y-4">
-                            <!-- H2 Ajustado: lg:text-[64px], line height aumentado via style="line-height: 1.0;" -->
                             <h2 class="text-3xl md:text-4xl lg:text-[64px] font-bold text-[#DDDB40]" style="line-height: 1.0;">Investimento inicial baixo e facilitado</h2>
-                            <!-- P Ajustado: lg:text-[34px] e removido max-w-lg. Leading alterado para normal. -->
                             <p class="text-lg md:text-xl lg:text-[34px] text-white font-light leading-normal">incluindo todos equipamentos necessários para começar o negócio e faturar!</p>
                         </div>
                     </div>
                     <div class="pl-6">
-                        <!-- Button Updated: text-black, no shadow -->
                         <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-[#FFB400] text-black font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero saber mais sobre investimento">
                             <span>QUERO SABER MAIS</span>
                             <div class="w-0 overflow-hidden group-hover:w-6 transition-all duration-300 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
@@ -418,31 +416,27 @@
                 <h3 class="text-3xl font-bold mb-8">Entenda o Negócio</h3>
                 <div class="space-y-8">
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Ícone de Payback - Retorno do investimento" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Payback (quando você tem retorno do valor investido)</p>
-                            <!-- Removido font-bold -->
                             <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A]"><li class="text-xl">Estimado 8 a 12 meses</li></ul>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Ícone de Breakeven - Ponto de equilíbrio" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Breakeven (momento na qual o Studio começa a dar lucro)</p>
-                            <!-- Removido font-bold -->
                             <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A]"><li class="text-xl">2 a 4 meses</li></ul>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Ícone de Royalties - Taxas mensais" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg font-bold">Royalties</p>
                             <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A] space-y-1">
-                                <!-- Removido text-sm do span -->
                                 <li class="text-xl">
-                                    R$990,00 mensais fixo <span class="font-normal block md:inline">(Para unidades polo de curso)</span>
+                                    R$990,00 mensais fixo <span class="text-sm font-normal block md:inline">(Para unidades polo de curso)</span>
                                 </li>
-                                <!-- Itens movidos para cá e removido font-bold de 'Não cobramos...' -->
                                 <li class="text-lg">Não cobramos fundo de propagando</li>
                                 <li class="text-lg">Conversão média de 50% de cliente em sua unidade.</li>
                             </ul>
@@ -457,14 +451,10 @@
     <section class="w-full py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="space-y-2 text-center md:text-left">
-                <!-- Aumentado para 42px -->
                 <h2 class="text-3xl md:text-[42px] font-bold text-[#00968D]">Contato Direto</h2>
-                <!-- Removido hover:text-[#00968D] e transition-colors -->
-                <!-- Adicionado font-bold -->
                 <p class="text-xl md:text-2xl text-[#333333]"><a href="https://api.whatsapp.com/send?phone=5519993043657&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL%0A" target="_blank" rel="noopener noreferrer" class="text-inherit no-underline font-bold">Fale com o gerente de franquias – clique aqui</a></p>
             </div>
-            <!-- Borda aumentada para 3px -->
-            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-white border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações sobre contato">
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-white border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações">
                 <div class="w-6 h-6" aria-hidden="true"></div>
                 <span>QUERO MAIS INFOS</span>
                 <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
@@ -478,11 +468,9 @@
     <section class="w-full bg-[#EEEEEE]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="space-y-6 mb-12">
-                <!-- Alterado para 42px -->
                 <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">
                     O que você recebe ao abrir seu Studio VOLL Pilates?
                 </h2>
-                <!-- HR Fino e #00968D -->
                 <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
                 
                 <div class="text-[#333333] text-lg leading-relaxed">
@@ -498,9 +486,7 @@
             <!-- BENEFITS SPLIT COLUMNS -->
             <div class="flex flex-col md:flex-row gap-8 mb-12 items-start">
                 
-                <!-- COLUNA DA ESQUERDA -->
                 <div class="w-full md:w-1/2 space-y-8">
-                    <!-- 1. Kit (Mala/Briefcase) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
@@ -508,7 +494,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Kit completo de equipamentos profissionais</strong> (Cadillac, Reformer, Step Chair e Ladder Barrel, além de acessórios exclusivos).</p>
                     </div>
 
-                    <!-- 2. Projeto (Mapa) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
@@ -516,7 +501,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Projeto arquitetônico padronizado</strong> para seu Studio com identidade VOLL.</p>
                     </div>
 
-                    <!-- 3. Treinamento (Check) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -524,7 +508,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Treinamento técnico e</strong> capacitação contínua para você e sua equipe.</p>
                     </div>
 
-                    <!-- 4. Marketing (User/Pessoa) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -532,7 +515,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Marketing agressivo e</strong> suporte estratégico que garantem a visibilidade do seu negócio.</p>
                     </div>
 
-                    <!-- 5. Plataforma (Monitor) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
@@ -541,9 +523,7 @@
                     </div>
                 </div>
 
-                <!-- COLUNA DA DIREITA -->
                 <div class="w-full md:w-1/2 space-y-8">
-                    <!-- 6. Bolsa (Capelo) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 2 0 0 0 6 6 6 2 0 0 0 6-6v-3.5"/></svg>
@@ -551,7 +531,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Bolsa 100% em</strong> Formação em Pilates pela Espaço Vida Pilates (ou outro curso VOLL equivalente).</p>
                     </div>
 
-                    <!-- 7. Programa (Apresentação) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
@@ -559,7 +538,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Programa de Treinamentos VOLL:</strong> capacitações em Pilates, Comunicação, Marketing, Vendas e Finanças.</p>
                     </div>
 
-                    <!-- 8. Direito Marca (Documentos) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -567,7 +545,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Direito de uso da marca VOLL Studios,</strong> sinônimo de qualidade e confiança no mercado.</p>
                     </div>
 
-                    <!-- 9. Página (Laptop) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
@@ -575,7 +552,6 @@
                         <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Página exclusiva no</strong> site oficial da VOLL Studios para sua unidade.</p>
                     </div>
 
-                    <!-- 10. Afiliação (Gráfico) -->
                     <div class="flex gap-4 items-start">
                         <div class="flex-shrink-0 mt-1 text-[#FFB400]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
@@ -585,21 +561,39 @@
                 </div>
             </div>
 
+            <div class="space-y-6 mb-12">
+                <h3 class="text-2xl font-bold text-[#333333]">E tem mais…</h3>
+                <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="flex gap-4 items-center">
+                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                        <p class="text-[#333333] text-lg"><strong>Kit de identidade visual e</strong> materiais para inauguração.</p>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                        <p class="text-[#333333] text-lg"><strong>Painel de recepção exclusivo</strong> com a logo VOLL Studios.</p>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                        <p class="text-[#333333] text-lg"><strong>Equipamentos e itens para estrutura inicial do</strong> espaço (tinta, bebedouro, acessórios oficiais).</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="space-y-8">
-                <!-- Adicionado padding-left (pl-6) para alinhar com o texto da lista acima -->
                 <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
                     Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                 </p>
 
                 <div class="flex justify-center items-center gap-4 pt-4">
-                   <!-- REMOVIDO WHATSAPP E BOTÃO DAQUI -->
+                   <!-- Botões removidos conforme solicitado -->
                 </div>
             </div>
         </div>
         <!-- CTA GRID -->
         <div class="w-full grid grid-cols-1 md:grid-cols-2">
             <div class="bg-[#2A2A2A] py-8 flex justify-center items-center">
-                <!-- Borda aumentada para 3px -->
                 <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="WhatsApp">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>WhatsApp</span>
@@ -607,9 +601,6 @@
                 </a>
             </div>
             <div class="bg-[#00968D] py-8 flex justify-center items-center">
-                <!-- BOTAO DO GRID (ESTE DEVE TER O ESTILO CORRETO: Transparente + Borda Branca) -->
-                <!-- O usuário disse: "para de mexer no botao da sessao E tem mais…! voce alterou denovo, é pra ficar como na terceira print" -->
-                <!-- A terceira print mostrava fundo transparente e borda branca. Vou garantir isso aqui. -->
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações">
                     <div class="w-6 h-6" aria-hidden="true"></div>
                     <span>QUERO MAIS INFOS</span>
@@ -626,7 +617,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-[#00615A]">FORMA DE PAGAMENTO FACILITADAS</h2>
                 <p class="text-xl md:text-2xl text-[#5E5E5E] font-bold">APROVEITE!</p>
             </div>
-            <!-- Borda aumentada para 3px. Botão: Fundo #EAEAEA (igual ao section). Texto #00615A. Hover: Fundo #00615A, Texto Branco. -->
             <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-[#EAEAEA] border-[3px] border-[#00615A] text-[#00615A] hover:bg-[#00615A] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="Fale pelo WhatsApp">
                 <div class="w-6 h-6" aria-hidden="true"></div>
                 <span>FALE PELO WHATSAPP</span>
@@ -639,10 +629,8 @@
     <section class="w-full py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-12">
             <a href="https://vollpilates.com.br/" target="_blank" rel="noopener noreferrer">
-                <!-- Imagem aumentada para 167px de altura -->
-                <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="VOLL Pilates Group" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" width="200" height="80" loading="lazy">
+                <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="Logo do Grupo VOLL Pilates" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" width="200" height="80" loading="lazy">
             </a>
-            <!-- Frase em MAIÚSCULAS e fonte 32px -->
             <h2 class="text-[32px] text-[#333333] font-light uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                 <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-[20px] md:text-[20px]">Anos de experiência.</p></div>
@@ -659,8 +647,8 @@
             <h2 class="text-center text-[42px] font-bold text-[#333333] mb-12">Histórias reais de pessoas reais</h2>
 
             <!-- Arrows -->
-            <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Anterior"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-            <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Próximo"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
 
             <!-- Carousel -->
             <div class="overflow-hidden">
@@ -669,7 +657,7 @@
                     <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
                         <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
                             <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=05EWG4VzcMc')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Teresina" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Ianca e Nayara" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueadas: Ianca Ravale de Meneses Fortes e Nayara Thayrine</h3>
@@ -682,7 +670,7 @@
                     <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
                         <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
                             <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=ovHBadbDWpg')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Vilhena" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Dayanee Xuli" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
@@ -695,7 +683,7 @@
                     <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
                         <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
                             <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=AkfvkwdbHIU')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Holambra" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Jessica Wopereis" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Jessica Wopereis</h3>
@@ -708,7 +696,7 @@
                     <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
                         <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
                             <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=C1BQkbaOUy0')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Rio Branco" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Elaine Cristina" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Elaine Cristina</h3>
@@ -721,7 +709,7 @@
                      <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
                         <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
                             <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=4gciU4Azfsc')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Dayanee Xuli" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
                             </div>
                             <div class="w-full flex flex-col space-y-2">
                                 <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
@@ -738,14 +726,14 @@
 
             <!-- Mobile Arrows -->
             <div class="flex justify-between mt-4 md:hidden px-4">
-                <button id="prev-slide-mobile" class="text-[#666666]" aria-label="Anterior"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button id="next-slide-mobile" class="text-[#666666]" aria-label="Próximo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+                <button id="prev-slide-mobile" class="text-[#666666]" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                <button id="next-slide-mobile" class="text-[#666666]" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
             </div>
         </div>
     </section>
 
     <!-- VIDEO MODAL -->
-    <div id="video-modal" class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 hidden modal-fade-in">
+    <div id="video-modal" class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 hidden modal-fade-in" aria-hidden="true">
         <div class="relative w-full max-w-4xl aspect-video bg-black shadow-2xl rounded-lg overflow-hidden">
             <button id="close-modal" class="absolute top-4 right-4 z-10 text-white/70 hover:text-white transition-colors" aria-label="Fechar vídeo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -816,11 +804,13 @@
             if(videoId) {
                 iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
                 modal.classList.remove('hidden');
+                modal.setAttribute('aria-hidden', 'false');
             }
         };
 
         const hideModal = () => {
              modal.classList.add('hidden');
+             modal.setAttribute('aria-hidden', 'true');
              iframe.src = "";
         };
 
