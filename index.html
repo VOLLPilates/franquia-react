@@ -22,7 +22,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </noscript>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="style" href="styles.css?v=1">
+    <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
 
@@ -756,31 +757,54 @@
             const dotsContainer = document.getElementById('carousel-dots');
             
             let currentIndex = 0;
-            let itemsPerPage = window.innerWidth >= 768 ? 3 : 1;
+            let dotButtons = [];
+            let itemsPerPage = window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
 
-            function updateCarousel() {
-                const percentage = 100 / itemsPerPage;
-                track.style.transform = `translateX(-${currentIndex * percentage}%)`;
-                renderDots();
+            function getItemsPerPage() {
+                return window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
             }
 
-            function renderDots() {
+            function getTotalDots() {
+                return Math.max(1, slides.length - itemsPerPage + 1);
+            }
+
+            function ensureDots() {
+                const totalDots = getTotalDots();
+
+                if (dotButtons.length === totalDots) {
+                    return;
+                }
+
                 dotsContainer.innerHTML = '';
-                // Total de pontos = total de slides - itens por página + 1
-                // Ex: 5 slides, 3 por pag = 3 posições (0, 1, 2)
-                const totalDots = Math.max(1, slides.length - itemsPerPage + 1);
-                
-                for(let i=0; i < totalDots; i++) {
+                dotButtons = [];
+
+                for (let i = 0; i < totalDots; i++) {
                     const dot = document.createElement('button');
-                    dot.className = `carousel-dot${currentIndex === i ? ' is-active' : ''}`;
+                    dot.className = 'carousel-dot';
+                    dot.type = 'button';
+                    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
                     dot.onclick = () => {
                         currentIndex = i;
                         updateCarousel();
                     };
-                    // Acessibilidade para bolinhas
-                    dot.setAttribute("aria-label", `Ir para slide ${i + 1}`);
                     dotsContainer.appendChild(dot);
+                    dotButtons.push(dot);
                 }
+            }
+
+            function updateActiveDot() {
+                if (!dotButtons.length) return;
+                for (let i = 0; i < dotButtons.length; i++) {
+                    const isActive = currentIndex === i;
+                    dotButtons[i].classList.toggle('is-active', isActive);
+                    dotButtons[i].setAttribute('aria-current', isActive ? 'true' : 'false');
+                }
+            }
+
+            function updateCarousel() {
+                const percentage = 100 / itemsPerPage;
+                track.style.transform = `translateX(-${currentIndex * percentage}%)`;
+                updateActiveDot();
             }
 
             function nextSlide() {
@@ -810,17 +834,23 @@
             document.getElementById('prev-slide-mobile').onclick = prevSlide;
 
             // Responsive Resize
+            let resizeTimer;
             window.addEventListener('resize', () => {
-                const newItemsPerPage = window.innerWidth >= 768 ? 3 : 1;
-                if (newItemsPerPage !== itemsPerPage) {
-                    itemsPerPage = newItemsPerPage;
-                    currentIndex = 0; // Reset para evitar quebra
-                    updateCarousel();
-                }
-            });
+                window.clearTimeout(resizeTimer);
+                resizeTimer = window.setTimeout(() => {
+                    const newItemsPerPage = getItemsPerPage();
+                    if (newItemsPerPage !== itemsPerPage) {
+                        itemsPerPage = newItemsPerPage;
+                        currentIndex = 0; // Reset para evitar quebra
+                        ensureDots();
+                        updateCarousel();
+                    }
+                }, 150);
+            }, { passive: true });
 
             // Init
-            renderDots();
+            ensureDots();
+            updateCarousel();
 
             // Otimização de script para evitar layout thrashing
             let ticking = false;
