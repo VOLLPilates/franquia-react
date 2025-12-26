@@ -1012,7 +1012,7 @@ button:focus-visible {
 .cta__note {
   margin: 0.5rem 0 0;
   font-size: 0.875rem;
-  color: var(--gray-500);
+  color: var(--gray-700);
   max-width: 400px;
 }
 
@@ -1672,21 +1672,41 @@ button:focus-visible {
 }
 
 .carousel-dot {
-  width: 12px;
-  height: 12px;
+  width: 44px;
+  height: 44px;
   border-radius: 9999px;
   border: 0;
-  background: var(--gray-300);
+  background: transparent;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease;
+}
+
+.carousel-dot::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--gray-300);
   transition: background-color 200ms ease;
 }
 
 .carousel-dot:hover {
+  background: transparent;
+}
+
+.carousel-dot:hover::before {
   background: var(--gray-400);
 }
 
 .carousel-dot.is-active {
-  background: #666666;
+  background: transparent;
+}
+
+.carousel-dot.is-active::before {
+  background: var(--gray-700);
 }
 
 .testimonials__mobile-arrows {
@@ -1705,8 +1725,11 @@ button:focus-visible {
 .testimonials__mobile-arrows button {
   background: transparent;
   border: 0;
-  color: #666666;
+  color: var(--gray-700);
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px;
 }
 
 /* Video Modal */
@@ -1737,11 +1760,13 @@ button:focus-visible {
   top: 1rem;
   right: 1rem;
   z-index: 10;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   background: transparent;
   border: 0;
   cursor: pointer;
   transition: color 200ms ease;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .video-modal__close:hover {

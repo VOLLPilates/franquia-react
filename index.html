@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://franquiadepilates.com.br">
+    <link rel="preconnect" href="https://d335luupugsy2.cloudfront.net" crossorigin>
     
     <!-- Preload da Imagem Hero (LCP) -->
     <link rel="preload" as="image" href="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp">
@@ -32,7 +33,6 @@
                         alt="VOLL Pilates Studios - Logotipo Branco" 
                         width="150" 
                         height="40"
-                        fetchpriority="high"
                         decoding="async"
                     >
                 </div>
@@ -647,18 +647,41 @@
 
         <!-- LOGIC SCRIPT (Vanilla JS) -->
         <script>
-            // --- RD Station Script (Otimizado) ---
-            // Adicionei defer e async para não bloquear renderização
-            const rdScript = document.createElement('script');
-            rdScript.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js";
-            rdScript.async = true;
-            rdScript.defer = true;
-            rdScript.onload = () => {
-                 if (window.RDStationForms) {
-                    new window.RDStationForms('franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd', 'UA-122086213-1').createForm();
-                 }
-            };
-            document.body.appendChild(rdScript);
+            // --- RD Station Script (Lazy-load para reduzir impacto no PageSpeed) ---
+            const RD_FORM_ID = 'franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd';
+            const RD_UA = 'UA-122086213-1';
+            let rdLoaded = false;
+
+            function loadRDStationForm() {
+                if (rdLoaded) return;
+                rdLoaded = true;
+
+                const rdScript = document.createElement('script');
+                rdScript.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js';
+                rdScript.async = true;
+                rdScript.onload = () => {
+                    if (window.RDStationForms) {
+                        new window.RDStationForms(RD_FORM_ID, RD_UA).createForm();
+                    }
+                };
+                document.body.appendChild(rdScript);
+            }
+
+            // Carrega quando o formulário estiver prestes a entrar na tela (melhor LCP e menos bloqueios)
+            const rdMount = document.getElementById(RD_FORM_ID);
+            if (rdMount && 'IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    if (entries.some(e => e.isIntersecting)) {
+                        io.disconnect();
+                        loadRDStationForm();
+                    }
+                }, { rootMargin: '600px 0px' });
+
+                io.observe(rdMount);
+            } else {
+                // Fallback
+                window.addEventListener('load', () => setTimeout(loadRDStationForm, 1500));
+            }
 
             // --- Scroll To Top Helper ---
             function scrollToTop() {
