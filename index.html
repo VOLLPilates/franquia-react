@@ -14,10 +14,10 @@
     <!-- Preload da Imagem Hero (LCP) -->
     <link rel="preload" as="image" href="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp">
 
-    <!-- Tailwind CSS (CDN) -->
+    <!-- Tailwind CSS (CDN - Necessário para este formato, mas impacta performance) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Com display=swap para evitar bloqueio) -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -48,7 +48,7 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Carousel Transition */
-        #carousel-track { transition: transform 0.5s ease-in-out; }
+        #carousel-track { transition: transform 0.5s ease-in-out; will-change: transform; }
 
         /* RD Station Form Fix */
         #rd-row-kked861r .bricks--column > div {
@@ -73,11 +73,12 @@
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
                     <img 
                         src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/VOLL-PILATES-Logotipo-Institucional-Branco-01.webp" 
-                        alt="Logotipo VOLL Pilates Studios" 
+                        alt="VOLL Pilates Studios - Logotipo Branco" 
                         class="h-10 w-auto object-contain" 
                         width="150" 
                         height="40"
                         fetchpriority="high"
+                        decoding="async"
                     >
                 </div>
 
@@ -100,8 +101,8 @@
                 <!-- MOBILE MENU BUTTON -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors p-3 -mr-3" aria-label="Abrir menu de navegação" aria-expanded="false">
-                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" role="img"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
@@ -121,13 +122,14 @@
     <main>
         <!-- HERO SECTION -->
         <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0" aria-label="Introdução e Cadastro">
-            <!-- PERFORMANCE: Troca de background-image CSS por IMG real para LCP rápido -->
             <div class="absolute inset-0 z-0">
+                <!-- Imagem Hero com fetchpriority high -->
                 <img 
                     src="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp" 
                     alt="" 
                     class="w-full h-full object-cover"
                     fetchpriority="high"
+                    decoding="async"
                     width="1920" 
                     height="1080"
                 >
@@ -154,7 +156,7 @@
                             <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center bg-[#349980] text-white font-semibold py-[4.5px] px-[15px] rounded-full shadow-lg transition-all duration-500 text-base md:text-lg overflow-hidden min-h-[48px]" aria-label="Falar com consultor no WhatsApp">
                                 <span>Quero ser um franqueado!</span>
                                 <div class="w-0 group-hover:w-[28px] transition-all duration-500 flex justify-end overflow-hidden">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out" aria-hidden="true" role="img"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                                 </div>
                             </a>
                         </div>
@@ -176,7 +178,7 @@
                     <!-- Item 1 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="Ícone de mala" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">INVESTIMENTO FACILITADO</h3>
@@ -186,7 +188,7 @@
                     <!-- Item 2 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="Ícone de caixa de presente" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">EQUIPAMENTOS</h3>
@@ -196,7 +198,7 @@
                     <!-- Item 3 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="Ícone de gráfico subindo" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">ESCALABILIDADE</h3>
@@ -206,7 +208,7 @@
                     <!-- Item 4 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="Ícone de professor" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FORMAÇÃO TÉCNICA</h3>
@@ -216,7 +218,7 @@
                     <!-- Item 5 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="Ícone de documento" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">DIREITOS DA MARCA</h3>
@@ -226,7 +228,7 @@
                     <!-- Item 6 -->
                     <div class="flex items-start gap-4 text-left">
                         <div class="flex-shrink-0 w-16 h-16">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="Ícone de mão segurando dinheiro" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy" decoding="async">
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FATURE MUITO!</h3>
@@ -242,8 +244,7 @@
             <!-- Esquerda -->
             <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
                 <div class="absolute inset-0 z-0">
-                     <!-- Otimização LCP: Imagem real em vez de background-image -->
-                     <img src="https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp" alt="" class="w-full h-full object-cover" width="800" height="1200" loading="lazy">
+                     <img src="https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp" alt="" class="w-full h-full object-cover" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,150,141,0.84), #29c4a9);"></div>
                 </div>
                 <div class="relative z-10 space-y-8 max-w-sm mx-0 lg:mx-0">
@@ -251,7 +252,7 @@
                          <!-- Itens da lista -->
                          <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true" role="img"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                             </div>
                             <div class="text-white">
                                 <h4 class="font-bold text-lg mb-1">Campanhas de Vendas Prontas</h4>
@@ -261,7 +262,7 @@
                          
                          <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true" role="img"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                             </div>
                             <div class="text-white">
                                 <h4 class="font-bold text-lg mb-1">Projeto Arquitetônico</h4>
@@ -271,7 +272,7 @@
                          
                          <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true" role="img"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                             </div>
                             <div class="text-white">
                                 <h4 class="font-bold text-lg mb-1">Plataforma do Franqueado</h4>
@@ -281,7 +282,7 @@
                          
                          <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true" role="img"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                             </div>
                             <div class="text-white">
                                 <h4 class="font-bold text-lg mb-1">Marketing 2.0</h4>
@@ -291,7 +292,7 @@
                          
                          <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white w-10 h-10" aria-hidden="true" role="img"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                             </div>
                             <div class="text-white">
                                 <h4 class="font-bold text-lg mb-1">Treinamentos Avançados</h4>
@@ -344,7 +345,7 @@
         <!-- SECURITY SECTION -->
         <section class="relative w-full py-20 md:py-28" aria-label="Segurança do Investimento">
             <div class="absolute inset-0 z-0">
-                <img src="https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp" alt="" class="w-full h-full object-cover" width="1200" height="800" loading="lazy">
+                <img src="https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_6.webp" alt="" class="w-full h-full object-cover" width="1200" height="800" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-black/75"></div>
             </div>
             <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-4">
@@ -356,7 +357,7 @@
                 <div class="flex flex-col items-center gap-2 py-0">
                     <p class="text-[22px] text-gray-300 max-w-2xl leading-relaxed">Somos associados à <strong class="text-white">ABF</strong>, garantindo ainda mais transparência, credibilidade e confiança para você investir no seu próprio Studio de Pilates com a força de uma marca reconhecida do Brasil e no mundo.</p>
                     <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/Associacao-Brasileira-de-Franchising-e1758288849748.webp" alt="Selo Associação Brasileira de Franchising" class="h-10 md:h-14 w-auto object-contain" width="200" height="80" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/Associacao-Brasileira-de-Franchising-e1758288849748.webp" alt="Selo Associação Brasileira de Franchising" class="h-10 md:h-14 w-auto object-contain" width="200" height="80" loading="lazy" decoding="async">
                     </a>
                 </div>
                 <div class="flex flex-col items-center gap-4 pt-0">
@@ -364,7 +365,7 @@
                         <div class="w-6 h-6" aria-hidden="true"></div>
                         <span>Conheça nossas formas de parcelamento</span>
                         <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true" role="img"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </div>
                     </button>
                     <p class="text-sm text-white max-w-md">Não vendemos Equipamentos ou Acessórios de forma avulsa. Temos apenas o modelo de Franquia!</p>
@@ -385,7 +386,7 @@
                             <div class="w-6 h-6" aria-hidden="true"></div>
                             <span>Venha ser nosso franqueado de número 230</span>
                             <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true" role="img"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                             </div>
                         </button>
                         <p class="text-sm text-gray-500 max-w-[400px] text-center">Não vendemos Equipamentos ou Acessórios de forma avulsa. Temos apenas o modelo de Franquia!</p>
@@ -395,7 +396,7 @@
                         <div class="w-6 h-6" aria-hidden="true"></div>
                         <span>Vai aproveitar?</span>
                         <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true" role="img"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </div>
                     </button>
                 </div>
@@ -408,7 +409,7 @@
                 
                 <div class="relative flex flex-col justify-center py-20 px-6 lg:px-12 xl:px-20">
                     <div class="absolute inset-0 z-0">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp" alt="" class="w-full h-full object-cover" width="1200" height="800" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/mapa.webp" alt="" class="w-full h-full object-cover" width="1200" height="800" loading="lazy" decoding="async">
                         <div class="absolute inset-0" style="background-color: rgba(40,40,40,0.79);"></div>
                     </div>
                     <div class="relative z-10 space-y-8">
@@ -431,21 +432,21 @@
                     <h3 class="text-3xl font-bold mb-8">Entenda o Negócio</h3>
                     <div class="space-y-8">
                         <div class="flex items-start gap-4">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Ícone de Payback - Retorno do investimento" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Ícone de Payback - Retorno do investimento" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy" decoding="async">
                             <div>
                                 <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Payback (quando você tem retorno do valor investido)</p>
                                 <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A]"><li class="text-xl">Estimado 8 a 12 meses</li></ul>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Ícone de Breakeven - Ponto de equilíbrio" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Ícone de Breakeven - Ponto de equilíbrio" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy" decoding="async">
                             <div>
                                 <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Breakeven (momento na qual o Studio começa a dar lucro)</p>
                                 <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A]"><li class="text-xl">2 a 4 meses</li></ul>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Ícone de Royalties - Taxas mensais" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                            <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Ícone de Royalties - Taxas mensais" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy" decoding="async">
                             <div>
                                 <p class="text-[#2A2A2A] text-lg font-bold">Royalties</p>
                                 <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A] space-y-1">
@@ -461,444 +462,450 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- CONTACT SECTION (Duplicada no layout original) -->
-    <!-- Removida pois já existe uma sessão de contato acima, o que melhora o DOM size -->
-    <!-- Se necessário manter por design, re-inserir. Assumindo que a estrutura era repetida de propósito -->
+        <!-- WHAT YOU GET SECTION -->
+        <section class="w-full bg-[#EEEEEE]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="space-y-6 mb-12">
+                    <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">
+                        O que você recebe ao abrir seu Studio VOLL Pilates?
+                    </h2>
+                    <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
+                    
+                    <div class="text-[#333333] text-lg leading-relaxed">
+                        <p>
+                            Ao se tornar um franqueado VOLL Studios, você não recebe apenas equipamentos. Você conquista um negócio pronto para decolar, com a força de uma marca que carrega 15 anos de liderança no Pilates no Brasil e no mundo.
+                        </p>
+                        <p class="font-bold mt-12 mb-12">
+                            Benefícios que tornam sua franquia única:
+                        </p>
+                    </div>
+                </div>
 
-    <!-- WHAT YOU GET SECTION -->
-    <section class="w-full bg-[#EEEEEE]">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="space-y-6 mb-12">
-                <h2 class="text-3xl md:text-[42px] font-bold text-[#333333] leading-tight">
-                    O que você recebe ao abrir seu Studio VOLL Pilates?
-                </h2>
-                <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
-                
-                <div class="text-[#333333] text-lg leading-relaxed">
-                    <p>
-                        Ao se tornar um franqueado VOLL Studios, você não recebe apenas equipamentos. Você conquista um negócio pronto para decolar, com a força de uma marca que carrega 15 anos de liderança no Pilates no Brasil e no mundo.
+                <!-- BENEFITS SPLIT COLUMNS -->
+                <div class="flex flex-col md:flex-row gap-8 mb-12 items-start">
+                    
+                    <div class="w-full md:w-1/2 space-y-8">
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Kit completo de equipamentos profissionais</strong> (Cadillac, Reformer, Step Chair e Ladder Barrel, além de acessórios exclusivos).</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Projeto arquitetônico padronizado</strong> para seu Studio com identidade VOLL.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Treinamento técnico e</strong> capacitação contínua para você e sua equipe.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Marketing agressivo e</strong> suporte estratégico que garantem a visibilidade do seu negócio.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Acesso à Plataforma Exclusiva de Franqueados com</strong> cursos, atualizações e materiais de gestão.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 space-y-8">
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 2 0 0 0 6 6 6 2 0 0 0 6-6v-3.5"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Bolsa 100% em</strong> Formação em Pilates pela Espaço Vida Pilates (ou outro curso VOLL equivalente).</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Programa de Treinamentos VOLL:</strong> capacitações em Pilates, Comunicação, Marketing, Vendas e Finanças.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Direito de uso da marca VOLL Studios,</strong> sinônimo de qualidade e confiança no mercado.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Página exclusiva no</strong> site oficial da VOLL Studios para sua unidade.</p>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1 text-[#FFB400]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                            </div>
+                            <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Afiliação ao VOLL Pilates Group:</strong> opção de revenda de cursos e produtos VOLL com comissão de 20%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 mb-12">
+                    <h3 class="text-2xl font-bold text-[#333333]">E tem mais…</h3>
+                    <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                            <p class="text-[#333333] text-lg"><strong>Kit de identidade visual e</strong> materiais para inauguração.</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                            <p class="text-[#333333] text-lg"><strong>Painel de recepção exclusivo</strong> com a logo VOLL Studios.</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
+                            <p class="text-[#333333] text-lg"><strong>Equipamentos e itens para estrutura inicial do</strong> espaço (tinta, bebedouro, acessórios oficiais).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
+                        Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
                     </p>
-                    <p class="font-bold mt-12 mb-12">
-                        Benefícios que tornam sua franquia única:
-                    </p>
-                </div>
-            </div>
 
-            <!-- BENEFITS SPLIT COLUMNS -->
-            <div class="flex flex-col md:flex-row gap-8 mb-12 items-start">
-                
-                <div class="w-full md:w-1/2 space-y-8">
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Kit completo de equipamentos profissionais</strong> (Cadillac, Reformer, Step Chair e Ladder Barrel, além de acessórios exclusivos).</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Projeto arquitetônico padronizado</strong> para seu Studio com identidade VOLL.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Treinamento técnico e</strong> capacitação contínua para você e sua equipe.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Marketing agressivo e</strong> suporte estratégico que garantem a visibilidade do seu negócio.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Acesso à Plataforma Exclusiva de Franqueados com</strong> cursos, atualizações e materiais de gestão.</p>
-                    </div>
-                </div>
-
-                <div class="w-full md:w-1/2 space-y-8">
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 2 0 0 0 6 6 6 2 0 0 0 6-6v-3.5"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Bolsa 100% em</strong> Formação em Pilates pela Espaço Vida Pilates (ou outro curso VOLL equivalente).</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Programa de Treinamentos VOLL:</strong> capacitações em Pilates, Comunicação, Marketing, Vendas e Finanças.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Direito de uso da marca VOLL Studios,</strong> sinônimo de qualidade e confiança no mercado.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Página exclusiva no</strong> site oficial da VOLL Studios para sua unidade.</p>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <div class="flex-shrink-0 mt-1 text-[#FFB400]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                        </div>
-                        <p class="text-[#333333] text-base md:text-lg leading-relaxed"><strong>Afiliação ao VOLL Pilates Group:</strong> opção de revenda de cursos e produtos VOLL com comissão de 20%.</p>
+                    <div class="flex justify-center items-center gap-4 pt-4">
                     </div>
                 </div>
             </div>
-
-            <div class="space-y-6 mb-12">
-                <h3 class="text-2xl font-bold text-[#333333]">E tem mais…</h3>
-                <div class="w-[50px] h-[5px] bg-[#00968D]"></div>
-                
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex gap-4 items-center">
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Kit de identidade visual e</strong> materiais para inauguração.</p>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Painel de recepção exclusivo</strong> com a logo VOLL Studios.</p>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#333333]"></div>
-                        <p class="text-[#333333] text-lg"><strong>Equipamentos e itens para estrutura inicial do</strong> espaço (tinta, bebedouro, acessórios oficiais).</p>
-                    </div>
+            <!-- CTA GRID -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-[#2A2A2A] py-8 flex justify-center items-center">
+                    <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="WhatsApp">
+                        <div class="w-6 h-6" aria-hidden="true"></div>
+                        <span>WhatsApp</span>
+                        <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    </a>
+                </div>
+                <div class="bg-[#00968D] py-8 flex justify-center items-center">
+                    <!-- BOTAO DO GRID (ESTE DEVE TER O ESTILO CORRETO: Transparente + Borda Branca) -->
+                    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações">
+                        <div class="w-6 h-6" aria-hidden="true"></div>
+                        <span>QUERO MAIS INFOS</span>
+                        <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    </button>
                 </div>
             </div>
+        </section>
 
-            <div class="space-y-8">
-                <p class="text-xl text-[#00615A] font-bold max-w-4xl text-left pl-6">
-                    Abrir um Studio VOLL é iniciar sua jornada empreendedora com segurança, visibilidade e o know-how de quem é referência em Pilates.
-                </p>
-
-                <div class="flex justify-center items-center gap-4 pt-4">
-                   <!-- Botões removidos -->
+        <!-- PAYMENT SECTION -->
+        <section class="w-full py-16 bg-[#EAEAEA] text-center">
+            <div class="max-w-4xl mx-auto px-4 flex flex-col items-center gap-6">
+                <div class="space-y-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#00615A]">FORMA DE PAGAMENTO FACILITADAS</h2>
+                    <p class="text-xl md:text-2xl text-[#5E5E5E] font-bold">APROVEITE!</p>
                 </div>
-            </div>
-        </div>
-        <!-- CTA GRID -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2">
-            <div class="bg-[#2A2A2A] py-8 flex justify-center items-center">
-                <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="WhatsApp">
+                <!-- CONTRASTE: Texto #00615A sobre branco/cinza claro é bom (4.5+). -->
+                <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-[#EAEAEA] border-[3px] border-[#00615A] text-[#00615A] hover:bg-[#00615A] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="Fale pelo WhatsApp">
                     <div class="w-6 h-6" aria-hidden="true"></div>
-                    <span>WhatsApp</span>
-                    <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    <span>FALE PELO WHATSAPP</span>
+                    <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
                 </a>
             </div>
-            <div class="bg-[#00968D] py-8 flex justify-center items-center">
-                <!-- CONTRASTE: Cor de texto ajustada para melhor leitura em fundo transparente (embora seja fundo azul do pai) -->
-                <!-- Na verdade, este botão está sobre fundo #00968D (teal). Texto branco é bom. O problema de contraste era nos botões transparentes sobre fundo cinza/branco. -->
-                <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-transparent border-[3px] border-white text-white font-bold py-4 px-10 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações">
-                    <div class="w-6 h-6" aria-hidden="true"></div>
-                    <span>QUERO MAIS INFOS</span>
-                    <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 text-white" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-                </button>
+        </section>
+
+        <!-- SOLIDITY SECTION -->
+        <section class="w-full py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-12">
+                <a href="https://vollpilates.com.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="Logo do Grupo VOLL Pilates" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" width="200" height="80" loading="lazy" decoding="async">
+                </a>
+                <h2 class="text-[32px] text-[#333333] font-light uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+                    <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-[20px] md:text-[20px]">Anos de experiência.</p></div>
+                    <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">100.000</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Alunos que passam em nossas unidades todos os meses.</p></div>
+                    <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">229</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Unidades presentes em todos os estados brasileiros.</p></div>
+                    <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">+200</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Colaboradores e Parceiros. O seu crescimento é nosso compromisso.</p></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PAYMENT SECTION -->
-    <section class="w-full py-16 bg-[#EAEAEA] text-center">
-        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center gap-6">
-            <div class="space-y-2">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#00615A]">FORMA DE PAGAMENTO FACILITADAS</h2>
-                <p class="text-xl md:text-2xl text-[#5E5E5E] font-bold">APROVEITE!</p>
-            </div>
-            <!-- CONTRASTE: Texto #00615A sobre branco/cinza claro é bom (4.5+). -->
-            <a href="https://api.whatsapp.com/send?phone=5519994075903&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-2 bg-[#EAEAEA] border-[3px] border-[#00615A] text-[#00615A] hover:bg-[#00615A] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300 no-underline" aria-label="Fale pelo WhatsApp">
-                <div class="w-6 h-6" aria-hidden="true"></div>
-                <span>FALE PELO WHATSAPP</span>
-                <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute transition-all duration-500 opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-            </a>
-        </div>
-    </section>
+        <!-- TESTIMONIALS SECTION (HTML Puro) -->
+        <section class="w-full py-16 bg-white overflow-hidden relative" id="testimonials-section">
+            <div class="max-w-6xl mx-auto px-12 relative">
+                <h2 class="text-center text-[42px] font-bold text-[#333333] mb-12">Histórias reais de pessoas reais</h2>
 
-    <!-- SOLIDITY SECTION -->
-    <section class="w-full py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-12">
-            <a href="https://vollpilates.com.br/" target="_blank" rel="noopener noreferrer">
-                <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/02/voll-pilates.png" alt="Logo do Grupo VOLL Pilates" class="h-[167px] w-auto object-contain hover:opacity-80 transition-opacity" width="200" height="80" loading="lazy">
-            </a>
-            <h2 class="text-[32px] text-[#333333] font-light uppercase">A <strong class="text-[#07A69C] font-bold">SOLIDEZ</strong> E <strong class="text-[#07A69C] font-bold">GARANTIA</strong> DO <strong class="text-[#07A69C] font-bold">MAIOR</strong> GRUPO DE PILATES NO BRASIL:</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">15</span><p class="text-[#333333] text-[20px] md:text-[20px]">Anos de experiência.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">100.000</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Alunos que passam em nossas unidades todos os meses.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">229</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Unidades presentes em todos os estados brasileiros.</p></div>
-                <div class="flex flex-col items-center space-y-2"><span class="text-5xl md:text-6xl font-bold text-[#07A69C]">+200</span><p class="text-[#333333] text-[20px] md:text-[20px] max-w-[200px]">Colaboradores e Parceiros. O seu crescimento é nosso compromisso.</p></div>
-            </div>
-        </div>
-    </section>
+                <!-- Arrows -->
+                <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
 
-    <!-- TESTIMONIALS SECTION (HTML Puro) -->
-    <section class="w-full py-16 bg-white overflow-hidden relative" id="testimonials-section">
-        <div class="max-w-6xl mx-auto px-12 relative">
-            <h2 class="text-center text-[42px] font-bold text-[#333333] mb-12">Histórias reais de pessoas reais</h2>
-
-            <!-- Arrows -->
-            <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-            <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 text-[#666666] hover:scale-110 transition-all hidden md:flex" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
-
-            <!-- Carousel -->
-            <div class="overflow-hidden">
-                <div id="carousel-track" class="flex">
-                    <!-- Slide 1 -->
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
-                        <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
-                            <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=05EWG4VzcMc')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Ianca e Nayara" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
-                            </div>
-                            <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueadas: Ianca Ravale de Meneses Fortes e Nayara Thayrine</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Teresina</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Piauí - Estado: Piauí Cidade: Teresinha Rua: Avenida Universitária N°: 750 Complemento: Ed. Diamond Center, sala 50 CEP: 64049-494</p>
+                <!-- Carousel -->
+                <div class="overflow-hidden">
+                    <div id="carousel-track" class="flex">
+                        <!-- Slide 1 -->
+                        <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
+                            <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
+                                <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=05EWG4VzcMc')">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Ianca e Nayara" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy" decoding="async">
+                                </div>
+                                <div class="w-full flex flex-col space-y-2">
+                                    <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueadas: Ianca Ravale de Meneses Fortes e Nayara Thayrine</h3>
+                                    <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Teresina</h4>
+                                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Piauí - Estado: Piauí Cidade: Teresinha Rua: Avenida Universitária N°: 750 Complemento: Ed. Diamond Center, sala 50 CEP: 64049-494</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
-                        <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
-                            <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=ovHBadbDWpg')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Dayanee Xuli" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
-                            </div>
-                            <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (primeira unidade) e VOLL Pilates Studios Centro de Vilhena (segunda unidade)</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia<br>Primeira unidade: Avenida Carmelita Fermina dos Anjos, 5712 - Bairro Jardim Eldorado - CEP: 76987-182 - Vilhena/RO<br>Segunda unidade: Estado: Rondônia Cidade: Vilhena Rua: Avenida Major Amarante, centro N°: 4119 Complemento: Edifício Capra, sala 205 CEP: 76980-075</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
-                        <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
-                            <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=AkfvkwdbHIU')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Jessica Wopereis" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
-                            </div>
-                            <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Jessica Wopereis</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Holambra</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em São Paulo - Estado: São Paulo Cidade: Holambra Rua: Solidagos N°: 320 Complemento: CEP: 13827-006</p>
+                        <!-- Slide 2 -->
+                        <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
+                            <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
+                                <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=ovHBadbDWpg')">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Dayanee Xuli" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy" decoding="async">
+                                </div>
+                                <div class="w-full flex flex-col space-y-2">
+                                    <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
+                                    <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (primeira unidade) e VOLL Pilates Studios Centro de Vilhena (segunda unidade)</h4>
+                                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em Rondônia<br>Primeira unidade: Avenida Carmelita Fermina dos Anjos, 5712 - Bairro Jardim Eldorado - CEP: 76987-182 - Vilhena/RO<br>Segunda unidade: Estado: Rondônia Cidade: Vilhena Rua: Avenida Major Amarante, centro N°: 4119 Complemento: Edifício Capra, sala 205 CEP: 76980-075</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
-                        <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
-                            <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=C1BQkbaOUy0')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Elaine Cristina" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
-                            </div>
-                            <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Elaine Cristina</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Rio Branco</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Acre - Estado: Acre Cidade: Rio Branco Rua: Rua Vênus N°: 148 Complemento: Sala 3 CEP: 69901-097</p>
+                        <!-- Slide 3 -->
+                        <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
+                            <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
+                                <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=AkfvkwdbHIU')">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Jessica Wopereis" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy" decoding="async">
+                                </div>
+                                <div class="w-full flex flex-col space-y-2">
+                                    <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Jessica Wopereis</h3>
+                                    <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Holambra</h4>
+                                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado em São Paulo - Estado: São Paulo Cidade: Holambra Rua: Solidagos N°: 320 Complemento: CEP: 13827-006</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                     <!-- Slide 5 -->
-                     <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
-                        <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
-                            <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=4gciU4Azfsc')">
-                                <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy">
+                        <!-- Slide 4 -->
+                        <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
+                            <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
+                                <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=C1BQkbaOUy0')">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Elaine Cristina" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy" decoding="async">
+                                </div>
+                                <div class="w-full flex flex-col space-y-2">
+                                    <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Elaine Cristina</h3>
+                                    <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Rio Branco</h4>
+                                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">Localizado no Acre - Estado: Acre Cidade: Rio Branco Rua: Rua Vênus N°: 148 Complemento: Sala 3 CEP: 69901-097</p>
+                                </div>
                             </div>
-                            <div class="w-full flex flex-col space-y-2">
-                                <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
-                                <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (Centro)</h4>
-                                <p class="text-gray-600 text-sm md:text-base leading-relaxed">Segunda unidade em Rondônia</p>
+                        </div>
+                         <!-- Slide 5 -->
+                         <div class="w-full md:w-1/3 flex-shrink-0 px-4 slide-item">
+                            <div class="flex flex-col gap-4 items-center text-center h-full"> <!-- Centralizado -->
+                                <div class="w-full relative cursor-pointer" onclick="openModal('https://www.youtube.com/watch?v=4gciU4Azfsc')">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" class="w-full aspect-video object-cover rounded-none shadow-sm" loading="lazy" decoding="async">
+                                </div>
+                                <div class="w-full flex flex-col space-y-2">
+                                    <h3 class="text-[#000000] font-normal text-xl md:text-2xl leading-tight">Franqueada Dayanee Xuli Brait</h3>
+                                    <h4 class="text-[#333333] font-normal text-lg">VOLL Pilates Studios Vilhena (Centro)</h4>
+                                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">Segunda unidade em Rondônia</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Dots -->
+                <div id="carousel-dots" class="flex justify-center mt-8 gap-2"></div>
+
+                <!-- Mobile Arrows -->
+                <div class="flex justify-between mt-4 md:hidden px-4">
+                    <button id="prev-slide-mobile" class="text-[#666666]" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                    <button id="next-slide-mobile" class="text-[#666666]" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+                </div>
             </div>
+        </section>
 
-            <!-- Dots -->
-            <div id="carousel-dots" class="flex justify-center mt-8 gap-2"></div>
-
-            <!-- Mobile Arrows -->
-            <div class="flex justify-between mt-4 md:hidden px-4">
-                <button id="prev-slide-mobile" class="text-[#666666]" aria-label="Ver depoimento anterior"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button id="next-slide-mobile" class="text-[#666666]" aria-label="Ver próximo depoimento"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        <!-- VIDEO MODAL -->
+        <div id="video-modal" class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 hidden modal-fade-in" aria-hidden="true">
+            <div class="relative w-full max-w-4xl aspect-video bg-black shadow-2xl rounded-lg overflow-hidden">
+                <button id="close-modal" class="absolute top-4 right-4 z-10 text-white/70 hover:text-white transition-colors" aria-label="Fechar vídeo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+                <iframe id="video-iframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
             </div>
         </div>
-    </section>
 
-    <!-- VIDEO MODAL -->
-    <div id="video-modal" class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 hidden modal-fade-in" aria-hidden="true">
-        <div class="relative w-full max-w-4xl aspect-video bg-black shadow-2xl rounded-lg overflow-hidden">
-            <button id="close-modal" class="absolute top-4 right-4 z-10 text-white/70 hover:text-white transition-colors" aria-label="Fechar vídeo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
-            <iframe id="video-iframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
-        </div>
-    </div>
+        <!-- FOOTER -->
+        <footer class="bg-[#141414] py-12">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <p class="text-white text-sm">© 2009-2025 VOLL Pilates Group. Todos os direitos reservados.</p>
+            </div>
+        </footer>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#141414] py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-white text-sm">© 2009-2025 VOLL Pilates Group. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        <!-- LOGIC SCRIPT (Vanilla JS) -->
+        <script>
+            // --- RD Station Script (Otimizado) ---
+            // Adicionei defer e async para não bloquear renderização
+            const rdScript = document.createElement('script');
+            rdScript.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js";
+            rdScript.async = true;
+            rdScript.defer = true;
+            rdScript.onload = () => {
+                 if (window.RDStationForms) {
+                    new window.RDStationForms('franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd', 'UA-122086213-1').createForm();
+                 }
+            };
+            document.body.appendChild(rdScript);
 
-    <!-- LOGIC SCRIPT (Vanilla JS) -->
-    <script>
-        // --- RD Station Script (Otimizado) ---
-        // Adicionei defer e async para não bloquear renderização
-        const rdScript = document.createElement('script');
-        rdScript.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js";
-        rdScript.async = true;
-        rdScript.defer = true;
-        rdScript.onload = () => {
-             if (window.RDStationForms) {
-                new window.RDStationForms('franquias-inscricao-site-de-vendas-banner-da-home-4ac0f4a834c79a1ee2dd', 'UA-122086213-1').createForm();
-             }
-        };
-        document.body.appendChild(rdScript);
-
-        // --- Scroll To Top Helper ---
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // --- Mobile Menu ---
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
-        let isMenuOpen = false;
-
-        menuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => mobileMenu.classList.remove('max-h-0', 'opacity-0'), 10);
-                iconMenu.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-                menuBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                mobileMenu.classList.add('max-h-0', 'opacity-0');
-                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-                iconMenu.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
+            // --- Scroll To Top Helper ---
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-        });
 
-        // --- Video Modal ---
-        const modal = document.getElementById('video-modal');
-        const iframe = document.getElementById('video-iframe');
-        const closeModal = document.getElementById('close-modal');
+            // --- Mobile Menu ---
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconMenu = document.getElementById('icon-menu');
+            const iconClose = document.getElementById('icon-close');
+            let isMenuOpen = false;
 
-        window.openModal = (url) => {
-            let videoId = "";
-            if (url.includes("v=")) { videoId = url.split("v=")[1].split("&")[0].split("?")[0]; } 
-            else if (url.includes("youtu.be/")) { videoId = url.split("youtu.be/")[1].split("?")[0]; }
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    setTimeout(() => mobileMenu.classList.remove('max-h-0', 'opacity-0'), 10);
+                    iconMenu.classList.add('hidden');
+                    iconClose.classList.remove('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('max-h-0', 'opacity-0');
+                    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                    iconMenu.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // --- Video Modal ---
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            const closeModal = document.getElementById('close-modal');
+
+            window.openModal = (url) => {
+                let videoId = "";
+                if (url.includes("v=")) { videoId = url.split("v=")[1].split("&")[0].split("?")[0]; } 
+                else if (url.includes("youtu.be/")) { videoId = url.split("youtu.be/")[1].split("?")[0]; }
+                
+                if(videoId) {
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    modal.classList.remove('hidden');
+                    modal.setAttribute('aria-hidden', 'false');
+                }
+            };
+
+            const hideModal = () => {
+                 modal.classList.add('hidden');
+                 modal.setAttribute('aria-hidden', 'true');
+                 iframe.src = "";
+            };
+
+            closeModal.onclick = hideModal;
+            modal.onclick = (e) => {
+                if (e.target === modal) hideModal();
+            };
+
+            // --- Carousel Logic ---
+            const track = document.getElementById('carousel-track');
+            const slides = Array.from(document.querySelectorAll('.slide-item'));
+            const dotsContainer = document.getElementById('carousel-dots');
             
-            if(videoId) {
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-                modal.classList.remove('hidden');
-                modal.setAttribute('aria-hidden', 'false');
+            let currentIndex = 0;
+            let itemsPerPage = window.innerWidth >= 768 ? 3 : 1;
+
+            function updateCarousel() {
+                const percentage = 100 / itemsPerPage;
+                track.style.transform = `translateX(-${currentIndex * percentage}%)`;
+                renderDots();
             }
-        };
 
-        const hideModal = () => {
-             modal.classList.add('hidden');
-             modal.setAttribute('aria-hidden', 'true');
-             iframe.src = "";
-        };
-
-        closeModal.onclick = hideModal;
-        modal.onclick = (e) => {
-            if (e.target === modal) hideModal();
-        };
-
-        // --- Carousel Logic ---
-        const track = document.getElementById('carousel-track');
-        const slides = Array.from(document.querySelectorAll('.slide-item'));
-        const dotsContainer = document.getElementById('carousel-dots');
-        
-        let currentIndex = 0;
-        let itemsPerPage = window.innerWidth >= 768 ? 3 : 1;
-
-        function updateCarousel() {
-            const percentage = 100 / itemsPerPage;
-            track.style.transform = `translateX(-${currentIndex * percentage}%)`;
-            renderDots();
-        }
-
-        function renderDots() {
-            dotsContainer.innerHTML = '';
-            // Total de pontos = total de slides - itens por página + 1
-            // Ex: 5 slides, 3 por pag = 3 posições (0, 1, 2)
-            const totalDots = Math.max(1, slides.length - itemsPerPage + 1);
-            
-            for(let i=0; i < totalDots; i++) {
-                const dot = document.createElement('button');
-                dot.className = `w-3 h-3 rounded-full transition-colors ${currentIndex === i ? 'bg-[#666666]' : 'bg-gray-300 hover:bg-gray-400'}`;
-                dot.onclick = () => {
-                    currentIndex = i;
-                    updateCarousel();
-                };
-                // Acessibilidade para bolinhas
-                dot.setAttribute("aria-label", `Ir para slide ${i + 1}`);
-                dotsContainer.appendChild(dot);
+            function renderDots() {
+                dotsContainer.innerHTML = '';
+                // Total de pontos = total de slides - itens por página + 1
+                // Ex: 5 slides, 3 por pag = 3 posições (0, 1, 2)
+                const totalDots = Math.max(1, slides.length - itemsPerPage + 1);
+                
+                for(let i=0; i < totalDots; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `w-3 h-3 rounded-full transition-colors ${currentIndex === i ? 'bg-[#666666]' : 'bg-gray-300 hover:bg-gray-400'}`;
+                    dot.onclick = () => {
+                        currentIndex = i;
+                        updateCarousel();
+                    };
+                    // Acessibilidade para bolinhas
+                    dot.setAttribute("aria-label", `Ir para slide ${i + 1}`);
+                    dotsContainer.appendChild(dot);
+                }
             }
-        }
 
-        function nextSlide() {
-            const maxIndex = slides.length - itemsPerPage;
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop
-            }
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            const maxIndex = slides.length - itemsPerPage;
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = maxIndex; // Loop
-            }
-            updateCarousel();
-        }
-
-        // Listeners
-        document.getElementById('next-slide').onclick = nextSlide;
-        document.getElementById('prev-slide').onclick = prevSlide;
-        document.getElementById('next-slide-mobile').onclick = nextSlide;
-        document.getElementById('prev-slide-mobile').onclick = prevSlide;
-
-        // Responsive Resize
-        window.addEventListener('resize', () => {
-            const newItemsPerPage = window.innerWidth >= 768 ? 3 : 1;
-            if (newItemsPerPage !== itemsPerPage) {
-                itemsPerPage = newItemsPerPage;
-                currentIndex = 0; // Reset para evitar quebra
+            function nextSlide() {
+                const maxIndex = slides.length - itemsPerPage;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop
+                }
                 updateCarousel();
             }
-        });
 
-        // Init
-        renderDots();
+            function prevSlide() {
+                const maxIndex = slides.length - itemsPerPage;
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = maxIndex; // Loop
+                }
+                updateCarousel();
+            }
 
-    </script>
+            // Listeners
+            document.getElementById('next-slide').onclick = nextSlide;
+            document.getElementById('prev-slide').onclick = prevSlide;
+            document.getElementById('next-slide-mobile').onclick = nextSlide;
+            document.getElementById('prev-slide-mobile').onclick = prevSlide;
+
+            // Responsive Resize
+            window.addEventListener('resize', () => {
+                const newItemsPerPage = window.innerWidth >= 768 ? 3 : 1;
+                if (newItemsPerPage !== itemsPerPage) {
+                    itemsPerPage = newItemsPerPage;
+                    currentIndex = 0; // Reset para evitar quebra
+                    updateCarousel();
+                }
+            });
+
+            // Init
+            renderDots();
+
+            // Otimização de script para evitar layout thrashing
+            let ticking = false;
+            window.addEventListener('scroll', function(e) {
+              if (!ticking) {
+                window.requestAnimationFrame(function() {
+                  // Lógica de scroll se necessário
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            });
+
+        </script>
+    </main>
 </body>
 </html>
