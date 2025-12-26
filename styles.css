@@ -422,11 +422,14 @@ button:focus-visible {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  /* Reserva espaço para o embed do RD Station e evita CLS */
+  min-height: 520px;
 }
 
 @media (min-width: 768px) {
   .hero__form {
     margin-left: auto;
+    min-height: 560px;
   }
 }
 
@@ -1667,8 +1670,10 @@ button:focus-visible {
 .carousel-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 2rem;
+  min-height: 44px;
 }
 
 .carousel-dot {

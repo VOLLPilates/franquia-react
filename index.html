@@ -15,8 +15,12 @@
     <!-- Preload da Imagem Hero (LCP) -->
     <link rel="preload" as="image" href="https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp">
 
-    <!-- Google Fonts (Com display=swap para evitar bloqueio) -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (não-bloqueante; mantém display=swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -553,7 +557,7 @@
                         <div class="slide-item">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__thumb" onclick="openModal('https://www.youtube.com/watch?v=05EWG4VzcMc')">
-                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Ianca e Nayara" loading="lazy" decoding="async">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/maxresdefault.webp" alt="Franqueadas Ianca e Nayara" width="1200" height="675" loading="lazy" decoding="async">
                                 </div>
                                 <div class="testimonial-card__body">
                                     <h3>Franqueadas: Ianca Ravale de Meneses Fortes e Nayara Thayrine</h3>
@@ -566,7 +570,7 @@
                         <div class="slide-item">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__thumb" onclick="openModal('https://www.youtube.com/watch?v=ovHBadbDWpg')">
-                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Dayanee Xuli" loading="lazy" decoding="async">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento2.webp" alt="Franqueada Dayanee Xuli" width="1200" height="675" loading="lazy" decoding="async">
                                 </div>
                                 <div class="testimonial-card__body">
                                     <h3>Franqueada Dayanee Xuli Brait</h3>
@@ -579,7 +583,7 @@
                         <div class="slide-item">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__thumb" onclick="openModal('https://www.youtube.com/watch?v=AkfvkwdbHIU')">
-                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Jessica Wopereis" loading="lazy" decoding="async">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento3.webp" alt="Franqueada Jessica Wopereis" width="1200" height="675" loading="lazy" decoding="async">
                                 </div>
                                 <div class="testimonial-card__body">
                                     <h3>Franqueada Jessica Wopereis</h3>
@@ -592,7 +596,7 @@
                         <div class="slide-item">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__thumb" onclick="openModal('https://www.youtube.com/watch?v=C1BQkbaOUy0')">
-                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Elaine Cristina" loading="lazy" decoding="async">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento4.webp" alt="Franqueada Elaine Cristina" width="1200" height="675" loading="lazy" decoding="async">
                                 </div>
                                 <div class="testimonial-card__body">
                                     <h3>Franqueada Elaine Cristina</h3>
@@ -605,7 +609,7 @@
                          <div class="slide-item">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__thumb" onclick="openModal('https://www.youtube.com/watch?v=4gciU4Azfsc')">
-                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" loading="lazy" decoding="async">
+                                    <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/depoimento5.webp" alt="Franqueada Vilhena 2" width="1200" height="675" loading="lazy" decoding="async">
                                 </div>
                                 <div class="testimonial-card__body">
                                     <h3>Franqueada Dayanee Xuli Brait</h3>
