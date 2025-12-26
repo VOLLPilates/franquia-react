@@ -826,22 +826,76 @@
                 track.style.transform = `translateX(${pct}%)`;
             }
 
+            function beginDrag(clientX, clientY, pointerId) {
+                isPointerDown = true;
+                isDragging = false;
+                activePointerId = pointerId;
+                startX = clientX;
+                startY = clientY;
+
+                const stepPct = 100 / itemsPerPage;
+                baseTranslatePct = -(currentIndex * stepPct);
+
+                track.style.transition = 'none';
+            }
+
+            function moveDrag(clientX, clientY, eventLike) {
+                if (!isPointerDown) return;
+
+                const dx = clientX - startX;
+                const dy = clientY - startY;
+
+                if (!isDragging) {
+                    if (Math.abs(dx) < 6) return;
+                    if (Math.abs(dx) <= Math.abs(dy)) return;
+                    isDragging = true;
+                }
+
+                if (eventLike && typeof eventLike.preventDefault === 'function') {
+                    eventLike.preventDefault();
+                }
+
+                const vw = getViewportWidth();
+                const dxPct = (dx / vw) * 100;
+                setTranslatePct(baseTranslatePct + dxPct);
+            }
+
+            function endDrag(clientX) {
+                if (!isPointerDown) return;
+
+                const dx = clientX - startX;
+                const vw = getViewportWidth();
+                const thresholdPx = Math.min(80, vw * 0.22);
+
+                isPointerDown = false;
+                activePointerId = null;
+
+                track.style.transition = '';
+
+                if (isDragging) {
+                    ignoreClick = true;
+                    window.setTimeout(() => { ignoreClick = false; }, 0);
+
+                    if (dx <= -thresholdPx) {
+                        nextSlide();
+                    } else if (dx >= thresholdPx) {
+                        prevSlide();
+                    } else {
+                        updateCarousel();
+                    }
+                } else {
+                    updateCarousel();
+                }
+
+                isDragging = false;
+            }
+
             if (viewport && window.PointerEvent) {
                 viewport.addEventListener('pointerdown', (e) => {
                     // only primary button for mouse; for touch it's always ok
                     if (e.pointerType === 'mouse' && e.button !== 0) return;
 
-                    isPointerDown = true;
-                    isDragging = false;
-                    activePointerId = e.pointerId;
-                    startX = e.clientX;
-                    startY = e.clientY;
-
-                    const stepPct = 100 / itemsPerPage;
-                    baseTranslatePct = -(currentIndex * stepPct);
-
-                    // remove transition while dragging
-                    track.style.transition = 'none';
+                    beginDrag(e.clientX, e.clientY, e.pointerId);
 
                     try { viewport.setPointerCapture(e.pointerId); } catch (_) {}
                 }, { passive: true });
@@ -850,60 +904,46 @@
                     if (!isPointerDown) return;
                     if (activePointerId !== null && e.pointerId !== activePointerId) return;
 
-                    const dx = e.clientX - startX;
-                    const dy = e.clientY - startY;
-
-                    // start dragging only if horizontal intent is clear
-                    if (!isDragging) {
-                        if (Math.abs(dx) < 6) return;
-                        if (Math.abs(dx) <= Math.abs(dy)) return;
-                        isDragging = true;
-                    }
-
-                    // prevent vertical scroll once dragging horizontally
-                    e.preventDefault();
-
-                    const vw = getViewportWidth();
-                    const dxPct = (dx / vw) * 100;
-                    setTranslatePct(baseTranslatePct + dxPct);
+                    moveDrag(e.clientX, e.clientY, e);
                 }, { passive: false });
 
-                function endPointerDrag(e) {
-                    if (!isPointerDown) return;
+                viewport.addEventListener('pointerup', (e) => {
                     if (activePointerId !== null && e.pointerId !== activePointerId) return;
-
-                    const dx = e.clientX - startX;
-                    const vw = getViewportWidth();
-                    const thresholdPx = Math.min(80, vw * 0.22);
-
-                    isPointerDown = false;
-                    activePointerId = null;
-
-                    // restore transition
-                    track.style.transition = '';
-
-                    if (isDragging) {
-                        ignoreClick = true;
-                        window.setTimeout(() => { ignoreClick = false; }, 0);
-
-                        if (dx <= -thresholdPx) {
-                            nextSlide();
-                        } else if (dx >= thresholdPx) {
-                            prevSlide();
-                        } else {
-                            updateCarousel();
-                        }
-                    } else {
-                        updateCarousel();
-                    }
-
-                    isDragging = false;
-                }
-
-                viewport.addEventListener('pointerup', endPointerDrag, { passive: true });
-                viewport.addEventListener('pointercancel', endPointerDrag, { passive: true });
+                    endDrag(e.clientX);
+                }, { passive: true });
+                viewport.addEventListener('pointercancel', (e) => {
+                    if (activePointerId !== null && e.pointerId !== activePointerId) return;
+                    endDrag(e.clientX);
+                }, { passive: true });
 
                 // If user dragged, prevent the synthetic click (e.g. on video thumbs)
+                track.addEventListener('click', (e) => {
+                    if (!ignoreClick) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, true);
+            } else if (viewport) {
+                // Touch fallback
+                viewport.addEventListener('touchstart', (e) => {
+                    if (!e.touches || e.touches.length !== 1) return;
+                    const t = e.touches[0];
+                    beginDrag(t.clientX, t.clientY, null);
+                }, { passive: true });
+
+                viewport.addEventListener('touchmove', (e) => {
+                    if (!e.touches || e.touches.length !== 1) return;
+                    const t = e.touches[0];
+                    moveDrag(t.clientX, t.clientY, e);
+                }, { passive: false });
+
+                viewport.addEventListener('touchend', (e) => {
+                    const t = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0] : null;
+                    endDrag(t ? t.clientX : startX);
+                }, { passive: true });
+                viewport.addEventListener('touchcancel', () => {
+                    endDrag(startX);
+                }, { passive: true });
+
                 track.addEventListener('click', (e) => {
                     if (!ignoreClick) return;
                     e.preventDefault();
