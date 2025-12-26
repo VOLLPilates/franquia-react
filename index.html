@@ -65,15 +65,18 @@
 
                 <!-- DESKTOP NAV -->
                 <nav class="hidden md:flex items-center space-x-8" aria-label="Menu Principal">
-                    <a href="#" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
+                    <!-- Link atualizado para rolar até a seção de público alvo -->
+                    <a href="#target-audience" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Perfil do Franqueado
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
+                    <!-- Link atualizado para rolar até o formulário -->
+                    <a href="#hero" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Contato
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
+                    <!-- Link externo atualizado -->
+                    <a href="https://franquiadepilates.com.br/areadofranqueado/" target="_blank" rel="noopener noreferrer" class="group relative text-white hover:text-[#7FD4C1] transition-colors duration-300 text-sm font-semibold tracking-wide py-2">
                         Área do Franqueado
                         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7FD4C1] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     </a>
@@ -83,8 +86,8 @@
                 <div class="md:hidden flex items-center">
                     <!-- ACESSIBILIDADE: aria-label adicionado -->
                     <button id="mobile-menu-btn" class="text-white hover:text-[#7FD4C1] focus:outline-none transition-colors" aria-label="Abrir menu de navegação">
-                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        <svg id="icon-menu" class="block w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg id="icon-close" class="hidden w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
@@ -93,9 +96,10 @@
         <!-- MOBILE MENU DRAWER -->
         <div id="mobile-menu" class="hidden bg-[#4A4A4A] border-t border-gray-600 overflow-hidden transition-all duration-300 ease-in-out">
             <nav class="px-4 pt-2 pb-4 space-y-1 flex flex-col" aria-label="Menu Mobile">
-                <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Perfil do Franqueado</a>
-                <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Contato</a>
-                <a href="#" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Área do Franqueado</a>
+                <!-- Links mobile atualizados -->
+                <a href="#target-audience" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Perfil do Franqueado</a>
+                <a href="#hero" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Contato</a>
+                <a href="https://franquiadepilates.com.br/areadofranqueado/" target="_blank" rel="noopener noreferrer" class="block px-3 py-3 text-base font-semibold text-white hover:text-[#7FD4C1] transition-colors">Área do Franqueado</a>
             </nav>
         </div>
     </header>
@@ -103,6 +107,7 @@
     <!-- HERO SECTION -->
     <section id="hero" class="relative w-full min-h-[90vh] flex items-center bg-gray-900 mt-16 md:mt-0" aria-label="Introdução">
         <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2025/10/Imagem.webp');" role="img" aria-label="Imagem de fundo de um estúdio de Pilates moderno">
+            <!-- Overlay -->
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
@@ -143,12 +148,15 @@
     <!-- FEATURES SECTION -->
     <section class="w-full py-12 md:py-16 bg-white" aria-label="Diferenciais da Franquia">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- ACESSIBILIDADE: Título invisível para corrigir hierarquia (H1 -> H2 -> H3) -->
+            <h2 class="sr-only">Nossos Diferenciais</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-12">
                 <!-- Item 1 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <!-- Otimização: Width/Height e Lazy Loading -->
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <!-- Otimização: Width/Height, Lazy Loading e Alt text descritivo -->
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-f%C3%A1cil-100.png" alt="Ícone de mala representando investimento facilitado" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">INVESTIMENTO FACILITADO</h3>
@@ -158,7 +166,7 @@
                 <!-- Item 2 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-presente-100.png" alt="Ícone de caixa de presente representando equipamentos inclusos" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">EQUIPAMENTOS</h3>
@@ -168,7 +176,7 @@
                 <!-- Item 3 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-gr%C3%A1fico-100.png" alt="Ícone de gráfico subindo representando escalabilidade" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">ESCALABILIDADE</h3>
@@ -178,7 +186,7 @@
                 <!-- Item 4 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-professor-100.png" alt="Ícone de professor representando formação técnica" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FORMAÇÃO TÉCNICA</h3>
@@ -188,7 +196,7 @@
                 <!-- Item 5 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-100.png" alt="Ícone de documento representando direitos de marca" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">DIREITOS DA MARCA</h3>
@@ -198,7 +206,7 @@
                 <!-- Item 6 -->
                 <div class="flex items-start gap-4 text-left">
                     <div class="flex-shrink-0 w-16 h-16">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-sacar-dinheiro-100.png" alt="Ícone de mão segurando dinheiro representando faturamento" class="w-full h-full object-contain" width="64" height="64" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-[#333333] uppercase tracking-wide leading-tight mb-2">FATURE MUITO!</h3>
@@ -210,7 +218,7 @@
     </section>
 
     <!-- TARGET AUDIENCE SECTION -->
-    <section class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]" aria-label="Público Alvo e Benefícios">
+    <section id="target-audience" class="w-full grid grid-cols-1 lg:grid-cols-[40%_60%]" aria-label="Público Alvo e Benefícios">
         <!-- Esquerda -->
         <div class="relative py-16 px-4 md:px-8 lg:px-12 flex flex-col justify-start pt-12">
             <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://franquiadepilates.com.br/wp-content/uploads/2024/05/studio_voll_campinas_pilates_5.webp');" role="img" aria-label="Imagem de fundo de uma aula de Pilates">
@@ -328,7 +336,7 @@
             </div>
             <div class="flex flex-col items-center gap-2 py-0">
                 <p class="text-[22px] text-gray-300 max-w-2xl leading-relaxed">Somos associados à <strong class="text-white">ABF</strong>, garantindo ainda mais transparência, credibilidade e confiança para você investir no seu próprio Studio de Pilates com a força de uma marca reconhecida do Brasil e no mundo.</p>
-                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF">
+                <a href="https://www.abf.com.br/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Visitar site da ABF (abre em nova aba)">
                     <img src="https://franquiadepilates.com.br/wp-content/uploads/2025/09/Associacao-Brasileira-de-Franchising-e1758288849748.webp" alt="Selo Associação Brasileira de Franchising" class="h-10 md:h-14 w-auto object-contain" width="200" height="80" loading="lazy">
                 </a>
             </div>
@@ -380,7 +388,6 @@
 
     <!-- BUSINESS SECTION -->
     <section class="relative w-full">
-        <!-- Alterado de lg:grid-cols-2 para lg:grid-cols-[70%_30%] para dar 70% ao mapa -->
         <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-[600px]">
             
             <!-- Coluna Esquerda: Imagem de Fundo com Overlay (Agora ocupa 70%) -->
@@ -411,7 +418,7 @@
                 <h3 class="text-3xl font-bold mb-8">Entenda o Negócio</h3>
                 <div class="space-y-8">
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Ícone de Payback" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-restitui%C3%A7%C3%A3o-2-100.png" alt="Ícone de Payback - Retorno do investimento" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Payback (quando você tem retorno do valor investido)</p>
                             <!-- Removido font-bold -->
@@ -419,7 +426,7 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Ícone de Breakeven" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-undefined-1001.png" alt="Ícone de Breakeven - Ponto de equilíbrio" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg leading-tight font-bold">Breakeven (momento na qual o Studio começa a dar lucro)</p>
                             <!-- Removido font-bold -->
@@ -427,13 +434,13 @@
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Ícone de Royalties" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
+                        <img src="https://franquiadepilates.com.br/wp-content/uploads/2019/11/icons8-comprar-moedas-100.png" alt="Ícone de Royalties - Taxas mensais" class="w-12 h-12 object-contain" width="48" height="48" loading="lazy">
                         <div>
                             <p class="text-[#2A2A2A] text-lg font-bold">Royalties</p>
                             <ul class="list-disc pl-5 mt-1 marker:text-[#2A2A2A] space-y-1">
-                                <!-- Removido font-bold -->
+                                <!-- Removido text-sm do span -->
                                 <li class="text-xl">
-                                    R$990,00 mensais fixo <span class="text-sm font-normal block md:inline">(Para unidades polo de curso)</span>
+                                    R$990,00 mensais fixo <span class="font-normal block md:inline">(Para unidades polo de curso)</span>
                                 </li>
                                 <!-- Itens movidos para cá e removido font-bold de 'Não cobramos...' -->
                                 <li class="text-lg">Não cobramos fundo de propagando</li>
@@ -457,7 +464,7 @@
                 <p class="text-xl md:text-2xl text-[#333333]"><a href="https://api.whatsapp.com/send?phone=5519993043657&text=Ol%C3%A1,%20tenho%20interesse%20na%20Franquia%20da%20VOLL%0A" target="_blank" rel="noopener noreferrer" class="text-inherit no-underline font-bold">Fale com o gerente de franquias – clique aqui</a></p>
             </div>
             <!-- Borda aumentada para 3px -->
-            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-white border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações">
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="group flex items-center justify-center gap-2 bg-white border-[3px] border-[#FFB400] text-[#FFB400] hover:bg-[#FFB400] hover:text-white font-bold py-4 px-8 uppercase tracking-widest text-sm md:text-base rounded-none transition-all duration-300" aria-label="Quero mais informações sobre contato">
                 <div class="w-6 h-6" aria-hidden="true"></div>
                 <span>QUERO MAIS INFOS</span>
                 <div class="w-6 h-6 relative flex items-center justify-center overflow-hidden">
@@ -482,7 +489,6 @@
                     <p>
                         Ao se tornar um franqueado VOLL Studios, você não recebe apenas equipamentos. Você conquista um negócio pronto para decolar, com a força de uma marca que carrega 15 anos de liderança no Pilates no Brasil e no mundo.
                     </p>
-                    <!-- Espaço maior em cima e igual em baixo -->
                     <p class="font-bold mt-12 mb-12">
                         Benefícios que tornam sua franquia única:
                     </p>
